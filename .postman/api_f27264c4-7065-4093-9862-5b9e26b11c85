@@ -9,7 +9,7 @@ id = f27264c4-7065-4093-9862-5b9e26b11c85
 
 [config.relations.collections]
 rootDirectory = USERAPI
-files[] = {"id":"40503757-fef00fa1-45dd-40a5-83cb-33ecf81922dc","path":"New Collection.json","metaData":{}}
+files[] = {"id":"40503757-3ded8a61-4f5a-4949-b36c-10fcd249f111","path":"USER API(1).json","metaData":{}}
 
 [config.relations.collections.metaData]
 
