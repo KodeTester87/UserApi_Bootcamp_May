@@ -1,0 +1,876 @@
+{
+	"info": {
+		"_postman_id": "a278bc32-bce6-439f-9bad-a594a5533414",
+		"name": "USER API",
+		"description": "User API Project",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "uap",
+			"item": [
+				{
+					"name": "deleteuser",
+					"item": [
+						{
+							"name": "username",
+							"item": [
+								{
+									"name": "{userFirstName}",
+									"item": [
+										{
+											"name": "delete By User Name",
+											"id": "1f23e28c-f4df-4d6c-9b74-255c2ac841d1",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"method": "DELETE",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "*/*"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/uap/deleteuser/username/:userFirstName",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"uap",
+														"deleteuser",
+														"username",
+														":userFirstName"
+													],
+													"variable": [
+														{
+															"key": "userFirstName",
+															"value": "<string>",
+															"description": "(Required) "
+														}
+													]
+												}
+											},
+											"response": [
+												{
+													"id": "a1401d37-5f8e-4323-90a7-ffa8463dceec",
+													"name": "default response",
+													"originalRequest": {
+														"method": "DELETE",
+														"header": [
+															{
+																"key": "Accept",
+																"value": "*/*"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/uap/deleteuser/username/:userFirstName",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"uap",
+																"deleteuser",
+																"username",
+																":userFirstName"
+															],
+															"variable": [
+																{
+																	"key": "userFirstName"
+																}
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "text",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "*/*"
+														}
+													],
+													"cookie": [],
+													"responseTime": null,
+													"body": "{\n  \"status\": \"<string>\",\n  \"message\": \"<string>\"\n}"
+												}
+											]
+										}
+									],
+									"id": "807fafcd-47c6-4e6e-99a5-dc9f86c7867e"
+								}
+							],
+							"id": "8c1b58b4-77c1-4b04-8079-f44526390b71"
+						},
+						{
+							"name": "{userId}",
+							"item": [
+								{
+									"name": "delete By User Id",
+									"id": "eb3e4b30-4eec-472b-a811-36775bebbfe3",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "DELETE",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "*/*"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/uap/deleteuser/:userId",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"uap",
+												"deleteuser",
+												":userId"
+											],
+											"variable": [
+												{
+													"key": "userId",
+													"value": "<long>",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"id": "dc02ae0b-d699-4932-a413-552df30c1d33",
+											"name": "default response",
+											"originalRequest": {
+												"method": "DELETE",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "*/*"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/uap/deleteuser/:userId",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"uap",
+														"deleteuser",
+														":userId"
+													],
+													"variable": [
+														{
+															"key": "userId"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "*/*"
+												}
+											],
+											"cookie": [],
+											"responseTime": null,
+											"body": "{\n  \"status\": \"<string>\",\n  \"message\": \"<string>\"\n}"
+										}
+									]
+								}
+							],
+							"id": "8142569f-9e17-41b4-8761-7800bea6a33d"
+						}
+					],
+					"id": "2b15a4d7-da83-41bc-ac32-a823d239b6ad"
+				},
+				{
+					"name": "users",
+					"item": [
+						{
+							"name": "username",
+							"item": [
+								{
+									"name": "{userFirstName}",
+									"item": [
+										{
+											"name": "get User By First Name",
+											"id": "f68260b0-7fab-4102-a046-39c5f6337c14",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "*/*"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/uap/users/username/:userFirstName",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"uap",
+														"users",
+														"username",
+														":userFirstName"
+													],
+													"variable": [
+														{
+															"key": "userFirstName",
+															"value": "<string>",
+															"description": "(Required) "
+														}
+													]
+												}
+											},
+											"response": [
+												{
+													"id": "bcf09cba-51cb-40f7-9b0c-92f6d7af8bdf",
+													"name": "default response",
+													"originalRequest": {
+														"method": "GET",
+														"header": [
+															{
+																"key": "Accept",
+																"value": "*/*"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/uap/users/username/:userFirstName",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"uap",
+																"users",
+																"username",
+																":userFirstName"
+															],
+															"variable": [
+																{
+																	"key": "userFirstName"
+																}
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "text",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "*/*"
+														}
+													],
+													"cookie": [],
+													"responseTime": null,
+													"body": "[\n  {\n    \"userContactNumber\": \"<long>\",\n    \"userEmailId\": \"Kbr_j.iSeN_jUteb_s2OSrHY-Usp.4SR.CkdNd@NtaVh9.lKTVUxzpsr\",\n    \"userFirstName\": \"EnQXv\",\n    \"userLastName\": \"jXRmj\",\n    \"userId\": \"<long>\",\n    \"creationTime\": \"<dateTime>\",\n    \"lastModTime\": \"<dateTime>\",\n    \"userAddress\": {\n      \"addressId\": \"<integer>\",\n      \"plotNumber\": \"<string>\",\n      \"street\": \"<string>\",\n      \"state\": \"<string>\",\n      \"country\": \"<string>\",\n      \"zipCode\": \"<long>\"\n    }\n  },\n  {\n    \"userContactNumber\": \"<long>\",\n    \"userEmailId\": \"f@1k5v.yLPGcKgFmi\",\n    \"userFirstName\": \"beU\",\n    \"userLastName\": \"wJWxxKEC\",\n    \"userId\": \"<long>\",\n    \"creationTime\": \"<dateTime>\",\n    \"lastModTime\": \"<dateTime>\",\n    \"userAddress\": {\n      \"addressId\": \"<integer>\",\n      \"plotNumber\": \"<string>\",\n      \"street\": \"<string>\",\n      \"state\": \"<string>\",\n      \"country\": \"<string>\",\n      \"zipCode\": \"<long>\"\n    }\n  }\n]"
+												}
+											]
+										}
+									],
+									"id": "67fff621-2ec6-4d9f-a329-31d375ff76f8"
+								}
+							],
+							"id": "77d5ac3d-9274-4ebf-bd03-b98e2951c25d"
+						},
+						{
+							"name": "get All Users",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "a61ed661-fdff-4598-9616-6cba4e36868d",
+										"exec": [
+											"const Ajv = require('ajv');\r",
+											"const ajv = new Ajv({ allErrors: true });\r",
+											"\r",
+											"const schema = JSON.parse(pm.collectionVariables.get(\"userSchema\"));\r",
+											"const validate = ajv.compile(schema);\r",
+											"\r",
+											"const response = pm.response.json();\r",
+											"\r",
+											"pm.test(\"✅ Validate each user in array\", function () {\r",
+											"  pm.expect(Array.isArray(response)).to.be.true;\r",
+											"\r",
+											"  response.forEach((user, index) => {\r",
+											"    const valid = validate(user);\r",
+											"    if (!valid) {\r",
+											"      console.log(`❌ Validation failed at index ${index}:`, validate.errors);\r",
+											"    }\r",
+											"    pm.expect(valid, `User at index ${index} is invalid`).to.be.true;\r",
+											"  });\r",
+											"});\r",
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											"pm.test(\"Content-Type is present\", function () {\r",
+											"    pm.response.to.have.header(\"Content-Type\");\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"id": "5307a16e-2058-4cbf-9edb-f6cc708db30b",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "*/*"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseUrl}}/uap/users"
+							},
+							"response": [
+								{
+									"id": "b74460de-9f86-45c8-af2e-a53c96b759a3",
+									"name": "default response",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "*/*"
+											}
+										],
+										"url": "{{baseUrl}}/uap/users"
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "[\n  {\n    \"userContactNumber\": \"<long>\",\n    \"userEmailId\": \"Kbr_j.iSeN_jUteb_s2OSrHY-Usp.4SR.CkdNd@NtaVh9.lKTVUxzpsr\",\n    \"userFirstName\": \"EnQXv\",\n    \"userLastName\": \"jXRmj\",\n    \"userId\": \"<long>\",\n    \"creationTime\": \"<dateTime>\",\n    \"lastModTime\": \"<dateTime>\",\n    \"userAddress\": {\n      \"addressId\": \"<integer>\",\n      \"plotNumber\": \"<string>\",\n      \"street\": \"<string>\",\n      \"state\": \"<string>\",\n      \"country\": \"<string>\",\n      \"zipCode\": \"<long>\"\n    }\n  },\n  {\n    \"userContactNumber\": \"<long>\",\n    \"userEmailId\": \"f@1k5v.yLPGcKgFmi\",\n    \"userFirstName\": \"beU\",\n    \"userLastName\": \"wJWxxKEC\",\n    \"userId\": \"<long>\",\n    \"creationTime\": \"<dateTime>\",\n    \"lastModTime\": \"<dateTime>\",\n    \"userAddress\": {\n      \"addressId\": \"<integer>\",\n      \"plotNumber\": \"<string>\",\n      \"street\": \"<string>\",\n      \"state\": \"<string>\",\n      \"country\": \"<string>\",\n      \"zipCode\": \"<long>\"\n    }\n  }\n]"
+								}
+							]
+						}
+					],
+					"id": "dc0e1202-da26-43f9-8f06-9cdf8f7c90f1"
+				},
+				{
+					"name": "user",
+					"item": [
+						{
+							"name": "{id}",
+							"item": [
+								{
+									"name": "get User By Id",
+									"id": "7e09b85b-12a0-4639-b621-8363c2d3692b",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "*/*"
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"url": "{{baseUrl}}/uap/user/21290"
+									},
+									"response": [
+										{
+											"id": "19f9976c-0324-4366-a835-fed414de9cae",
+											"name": "default response",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "*/*"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/uap/user/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"uap",
+														"user",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "*/*"
+												}
+											],
+											"cookie": [],
+											"responseTime": null,
+											"body": "{\n  \"userContactNumber\": \"<long>\",\n  \"userEmailId\": \"j6AUqnhTHZm.oXl-hq3bC_oQ@XT.gWzstR\",\n  \"userFirstName\": \"KuyJkjkMqfG\",\n  \"userLastName\": \"fEjZ\",\n  \"userId\": \"<long>\",\n  \"creationTime\": \"<dateTime>\",\n  \"lastModTime\": \"<dateTime>\",\n  \"userAddress\": {\n    \"addressId\": \"<integer>\",\n    \"plotNumber\": \"<string>\",\n    \"street\": \"<string>\",\n    \"state\": \"<string>\",\n    \"country\": \"<string>\",\n    \"zipCode\": \"<long>\"\n  }\n}"
+										}
+									]
+								}
+							],
+							"id": "eadf7ce7-30cc-40ea-9983-66fe6d8212a2"
+						}
+					],
+					"id": "e77849c8-3add-40c3-9de6-a9c5be904abe"
+				},
+				{
+					"name": "updateuserfields",
+					"item": [
+						{
+							"name": "{userId}",
+							"item": [
+								{
+									"name": "update User Fields",
+									"id": "9e285e34-fd62-4e57-97ed-bb8740c10f5d",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "PATCH",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "*/*"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/uap/updateuserfields/:userId",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"uap",
+												"updateuserfields",
+												":userId"
+											],
+											"variable": [
+												{
+													"key": "userId",
+													"value": "<long>",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"id": "1bd9c638-185c-4ed3-b400-ac78c4222927",
+											"name": "default response",
+											"originalRequest": {
+												"method": "PATCH",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "*/*"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/uap/updateuserfields/:userId",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"uap",
+														"updateuserfields",
+														":userId"
+													],
+													"variable": [
+														{
+															"key": "userId"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "*/*"
+												}
+											],
+											"cookie": [],
+											"responseTime": null,
+											"body": "{\n  \"userContactNumber\": \"<long>\",\n  \"userEmailId\": \"j6AUqnhTHZm.oXl-hq3bC_oQ@XT.gWzstR\",\n  \"userFirstName\": \"KuyJkjkMqfG\",\n  \"userLastName\": \"fEjZ\",\n  \"userId\": \"<long>\",\n  \"creationTime\": \"<dateTime>\",\n  \"lastModTime\": \"<dateTime>\",\n  \"userAddress\": {\n    \"addressId\": \"<integer>\",\n    \"plotNumber\": \"<string>\",\n    \"street\": \"<string>\",\n    \"state\": \"<string>\",\n    \"country\": \"<string>\",\n    \"zipCode\": \"<long>\"\n  }\n}"
+										}
+									]
+								}
+							],
+							"id": "13bebd5d-74f4-474e-a0db-c2de0e2f0156"
+						}
+					],
+					"id": "f5200555-b1d5-4d4c-81a7-c62ce3794ec0"
+				},
+				{
+					"name": "createusers",
+					"item": [
+						{
+							"name": "create New User",
+							"id": "aaba5e7a-bab7-485e-bf3f-e67b04b4bdc4",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"userContactNumber\": {{userContactNumber}},\n  \"userEmailId\": \"{{userEmailId}}\",\n  \"userFirstName\": \"{{userFirstName}}\",\n  \"userLastName\": \"{{userLastName}}\",\n  \"userId\": {{userId}},\n  \"creationTime\": \"{{creationTime}}\",\n  \"lastModTime\": \"{{lastModTime}}\",\n  \"userAddress\": {\n    \"addressId\": {{addressId}},\n    \"plotNumber\": \"{{plotNumber}}\",\n    \"street\": \"{{street}}\",\n    \"state\": \"{{state}}\",\n    \"country\": \"{{country}}\",\n    \"zipCode\": {{zipCode}}\n  }\n}\n",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseUrl}}/uap/createusers"
+							},
+							"response": [
+								{
+									"id": "660333ed-d846-4325-9969-695712afee78",
+									"name": "default response",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "*/*"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"userContactNumber\": \"<long>\",\n  \"userEmailId\": \"j6AUqnhTHZm.oXl-hq3bC_oQ@XT.gWzstR\",\n  \"userFirstName\": \"KuyJkjkMqfG\",\n  \"userLastName\": \"fEjZ\",\n  \"userId\": \"<long>\",\n  \"creationTime\": \"<dateTime>\",\n  \"lastModTime\": \"<dateTime>\",\n  \"userAddress\": {\n    \"addressId\": \"<integer>\",\n    \"plotNumber\": \"<string>\",\n    \"street\": \"<string>\",\n    \"state\": \"<string>\",\n    \"country\": \"<string>\",\n    \"zipCode\": \"<long>\"\n  }\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": "{{baseUrl}}/uap/createusers"
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n  \"userContactNumber\": \"<long>\",\n  \"userEmailId\": \"j6AUqnhTHZm.oXl-hq3bC_oQ@XT.gWzstR\",\n  \"userFirstName\": \"KuyJkjkMqfG\",\n  \"userLastName\": \"fEjZ\",\n  \"userId\": \"<long>\",\n  \"creationTime\": \"<dateTime>\",\n  \"lastModTime\": \"<dateTime>\",\n  \"userAddress\": {\n    \"addressId\": \"<integer>\",\n    \"plotNumber\": \"<string>\",\n    \"street\": \"<string>\",\n    \"state\": \"<string>\",\n    \"country\": \"<string>\",\n    \"zipCode\": \"<long>\"\n  }\n}"
+								}
+							]
+						},
+						{
+							"name": "New Request",
+							"id": "80e6cfa6-be27-4d1f-b611-087b3fcd5e09",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": "{{baseUrl}} /uap/user/{{userId}}\n"
+							},
+							"response": []
+						},
+						{
+							"name": "New Request",
+							"id": "3af0967a-2d8c-408e-9b62-14c36ae61f5d",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": []
+							},
+							"response": []
+						}
+					],
+					"id": "a41df7e0-a66f-45ab-86ae-b4562a2aeee4"
+				},
+				{
+					"name": "updateuser",
+					"item": [
+						{
+							"name": "{userId}",
+							"item": [
+								{
+									"name": "update User",
+									"id": "bd246c31-c8da-453e-a748-bbcc0de1336f",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "*/*"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"userContactNumber\": \"<long>\",\n  \"userEmailId\": \"j6AUqnhTHZm.oXl-hq3bC_oQ@XT.gWzstR\",\n  \"userFirstName\": \"KuyJkjkMqfG\",\n  \"userLastName\": \"fEjZ\",\n  \"userId\": \"<long>\",\n  \"creationTime\": \"<dateTime>\",\n  \"lastModTime\": \"<dateTime>\",\n  \"userAddress\": {\n    \"addressId\": \"<integer>\",\n    \"plotNumber\": \"<string>\",\n    \"street\": \"<string>\",\n    \"state\": \"<string>\",\n    \"country\": \"<string>\",\n    \"zipCode\": \"<long>\"\n  }\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/uap/updateuser/:userId",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"uap",
+												"updateuser",
+												":userId"
+											],
+											"variable": [
+												{
+													"key": "userId",
+													"value": "<long>",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"id": "d60d86ed-f7c3-40ec-9d69-d1e00dace0f8",
+											"name": "default response",
+											"originalRequest": {
+												"method": "PUT",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "*/*"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"userContactNumber\": \"<long>\",\n  \"userEmailId\": \"j6AUqnhTHZm.oXl-hq3bC_oQ@XT.gWzstR\",\n  \"userFirstName\": \"KuyJkjkMqfG\",\n  \"userLastName\": \"fEjZ\",\n  \"userId\": \"<long>\",\n  \"creationTime\": \"<dateTime>\",\n  \"lastModTime\": \"<dateTime>\",\n  \"userAddress\": {\n    \"addressId\": \"<integer>\",\n    \"plotNumber\": \"<string>\",\n    \"street\": \"<string>\",\n    \"state\": \"<string>\",\n    \"country\": \"<string>\",\n    \"zipCode\": \"<long>\"\n  }\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/uap/updateuser/:userId",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"uap",
+														"updateuser",
+														":userId"
+													],
+													"variable": [
+														{
+															"key": "userId"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "*/*"
+												}
+											],
+											"cookie": [],
+											"responseTime": null,
+											"body": "{\n  \"userContactNumber\": \"<long>\",\n  \"userEmailId\": \"j6AUqnhTHZm.oXl-hq3bC_oQ@XT.gWzstR\",\n  \"userFirstName\": \"KuyJkjkMqfG\",\n  \"userLastName\": \"fEjZ\",\n  \"userId\": \"<long>\",\n  \"creationTime\": \"<dateTime>\",\n  \"lastModTime\": \"<dateTime>\",\n  \"userAddress\": {\n    \"addressId\": \"<integer>\",\n    \"plotNumber\": \"<string>\",\n    \"street\": \"<string>\",\n    \"state\": \"<string>\",\n    \"country\": \"<string>\",\n    \"zipCode\": \"<long>\"\n  }\n}"
+										}
+									]
+								}
+							],
+							"id": "67fd52d5-d572-4798-8a48-198e27017d77"
+						}
+					],
+					"id": "c84ea4ca-6217-4793-8d42-3b36ce46b34b"
+				}
+			],
+			"id": "495bc106-de36-4dbe-be7d-bf42ad17ecf1"
+		}
+	],
+	"auth": {
+		"type": "basic",
+		"basic": {
+			"password": "{{password}}",
+			"username": "{{username}}"
+		}
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "9855e867-e47b-4c7d-a47f-99a0517bf491",
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					"const addressSchema = {\r",
+					"  type: \"object\",\r",
+					"  required: [\"addressId\", \"plotNumber\", \"street\", \"state\", \"country\", \"zipCode\"],\r",
+					"  properties: {\r",
+					"    addressId: { type: \"integer\" },\r",
+					"    plotNumber: { type: [\"string\", \"null\"] },\r",
+					"    street: { type: \"string\" },\r",
+					"    state: { type: \"string\" },\r",
+					"    country: { type: \"string\" },\r",
+					"    zipCode: { type: \"integer\" }\r",
+					"  }\r",
+					"};\r",
+					"\r",
+					"const userSchema = {\r",
+					"  type: \"object\",\r",
+					"  required: [\"userFirstName\", \"userLastName\", \"userContactNumber\", \"userEmailId\"],\r",
+					"  properties: {\r",
+					"    userId: { type: \"integer\" },\r",
+					"    userFirstName: {\r",
+					"      type: \"string\",\r",
+					"      pattern: \"^[a-zA-Z][a-zA-Z ]+$\"\r",
+					"    },\r",
+					"    userLastName: {\r",
+					"      type: \"string\",\r",
+					"      pattern: \"^[a-zA-Z][a-zA-Z ]+$\"\r",
+					"    },\r",
+					"    userContactNumber: { type: \"integer\" },\r",
+					"    userEmailId: {\r",
+					"      type: \"string\",\r",
+					"      pattern: \"^[a-zA-Z0-9]+(?:[._-][a-zA-Z0-9]+)*@[a-zA-Z0-9]+\\\\.[a-zA-Z]{2,}$\"\r",
+					"    },\r",
+					"    creationTime: { type: \"string\", format: \"date-time\" },\r",
+					"    lastModTime: { type: \"string\", format: \"date-time\" },\r",
+					"    userAddress: addressSchema\r",
+					"  }\r",
+					"};\r",
+					"\r",
+					"pm.collectionVariables.set(\"userSchema\", JSON.stringify(userSchema));\r",
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "25057215-4e6c-4f1f-aca6-e8086db8f1e0",
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "https://userserviceapp-f5a54828541b.herokuapp.com"
+		},
+		{
+			"key": "username",
+			"value": "",
+			"type": "default"
+		},
+		{
+			"key": "password",
+			"value": "",
+			"type": "default"
+		},
+		{
+			"key": "addressSchema",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "userSchema",
+			"value": ""
+		}
+	]
+}
