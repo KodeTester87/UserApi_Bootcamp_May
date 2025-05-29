@@ -279,6 +279,19 @@
 										}
 									],
 									"id": "67fff621-2ec6-4d9f-a329-31d375ff76f8"
+								},
+								{
+									"name": "Get By ID",
+									"id": "5369f022-7ed3-43e3-9baa-f33d8799e66a",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": "{{baseUrl}}/uap/users"
+									},
+									"response": []
 								}
 							],
 							"id": "77d5ac3d-9274-4ebf-bd03-b98e2951c25d"
