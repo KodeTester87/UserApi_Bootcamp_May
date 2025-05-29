@@ -282,6 +282,22 @@
 								},
 								{
 									"name": "Get By ID",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "54c1e521-8a79-4404-903a-1c92e1f3be14",
+												"exec": [
+													"pm.test(\"Response time is within an acceptable range\", function () {\r",
+													"  pm.expect(pm.response.responseTime).to.be.below(1000);\r",
+													"});\r",
+													""
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										}
+									],
 									"id": "5369f022-7ed3-43e3-9baa-f33d8799e66a",
 									"protocolProfileBehavior": {
 										"disableBodyPruning": true
