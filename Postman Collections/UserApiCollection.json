@@ -607,7 +607,7 @@
 					"name": "createusers",
 					"item": [
 						{
-							"name": "create New User",
+							"name": "create New User with Valid details",
 							"event": [
 								{
 									"listen": "test",
@@ -1008,6 +1008,11 @@
 		{
 			"key": "userSchema",
 			"value": ""
+		},
+		{
+			"key": "postendpoint",
+			"value": "",
+			"type": "default"
 		}
 	]
 }
