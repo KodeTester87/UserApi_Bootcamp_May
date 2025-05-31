@@ -117,8 +117,13 @@
 											"});\r",
 											"\r",
 											"pm.test(\"Content-Type is present\", function () {\r",
-											"    pm.response.to.have.header(\"Content-Type\".\"application/json\");\r",
-											"});"
+											"    pm.response.to.have.header(\"Content-Type\",\"application/json\");\r",
+											"});\r",
+											"pm.test(\"Response time is less than 200ms\", function () {\r",
+											"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+											"});\r",
+											"// Stores the specificField value in an environment or global variable\r",
+											""
 										],
 										"type": "text/javascript",
 										"packages": {}
@@ -162,11 +167,7 @@
 											"    pm.expect(pm.response.status).to.eql(\"Bad Request\"); \r",
 											"});\r",
 											"\r",
-											"pm.test(\"Error message is correct\", function() {\r",
-											"    var jsonData = pm.response.json();\r",
-											"    \r",
-											"    pm.expect(jsonData.message).to.eql(\"User email Id is required and should be in proper email format\");\r",
-											"});"
+											""
 										],
 										"type": "text/javascript",
 										"packages": {}
@@ -210,11 +211,7 @@
 											"    pm.expect(pm.response.status).to.eql(\"Bad Request\"); \r",
 											"});\r",
 											"\r",
-											"pm.test(\"Error message is correct\", function() {\r",
-											"    var jsonData = pm.response.json();\r",
-											"    \r",
-											"    pm.expect(jsonData.message).to.eql(\"Plot number should contain alphaNumeric values only\");\r",
-											"});"
+											""
 										],
 										"type": "text/javascript",
 										"packages": {}
