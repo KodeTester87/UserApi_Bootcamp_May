@@ -686,7 +686,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n  \"userContactNumber\": {{userContactNumber}},\n  \"userEmailId\": \"{{userEmailId}}\",\n  \"userFirstName\": \"{{userFirstName}}\",\n  \"userLastName\": \"{{userLastName}}\",\n  \"userId\": {{userId}},\n  \"creationTime\": \"{{creationTime}}\",\n  \"lastModTime\": \"{{lastModTime}}\",\n  \"userAddress\": {\n    \"addressId\": {{addressId}},\n    \"plotNumber\": \"{{plotNumber}}\",\n    \"street\": \"{{street}}\",\n    \"state\": \"{{state}}\",\n    \"country\": \"{{country}}\",\n    \"zipCode\": {{zipCode}}\n  }\n}\n",
+									"raw": "{\n  \"userContactNumber\": {{userContactNumber}},\n  \"userEmailId\": \"{{userEmailId}}\",\n  \"userFirstName\": \"{{userFirstName}}\",\n  \"userLastName\": \"{{userLastName}}\",\n  \"userAddress\": {\n    \"plotNumber\": \"{{plotNumber}}\",\n    \"street\": \"{{street}}\",\n    \"state\": \"{{state}}\",\n    \"country\": \"{{country}}\",\n    \"zipCode\": {{zipCode}}\n  }\n}\n",
 									"options": {
 										"raw": {
 											"headerFamily": "json",
@@ -694,7 +694,7 @@
 										}
 									}
 								},
-								"url": "{{baseUrl}}/uap/createusers"
+								"url": "{{baseUrl}}{{postendpoint}}"
 							},
 							"response": [
 								{
