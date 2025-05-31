@@ -286,7 +286,7 @@
 										{
 											"listen": "test",
 											"script": {
-												"id": "54c1e521-8a79-4404-903a-1c92e1f3be14",
+												"id": "b93da3b9-e003-441c-8066-9735c536226c",
 												"exec": [
 													"pm.test(\"Response time is within an acceptable range\", function () {\r",
 													"  pm.expect(pm.response.responseTime).to.be.below(1000);\r",
@@ -297,12 +297,13 @@
 													"pm.test(\"Content-Type is present\", function () {\r",
 													"    pm.response.to.have.header(\"Content-Type\");\r",
 													"});\r",
-													"pm.test(\"Content-Type is present\", function () {\r",
-													"    pm.response.to.have.header(\"Content-Type\",application/JSON);\r",
+													"pm.test(\"Content-Type is application/JSON\", function () {\r",
+													"    pm.response.to.have.header(\"Content-Type\",\"application/json\");\r",
 													"});\r",
 													"pm.test(\"Response time is less than 200ms\", function () {\r",
 													"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
-													"});"
+													"});\r",
+													""
 												],
 												"type": "text/javascript",
 												"packages": {}
@@ -335,7 +336,7 @@
 								{
 									"listen": "test",
 									"script": {
-										"id": "a61ed661-fdff-4598-9616-6cba4e36868d",
+										"id": "5882a2a5-ab57-4977-aecd-7cca6d54dc50",
 										"exec": [
 											"const Ajv = require('ajv');\r",
 											"const ajv = new Ajv({ allErrors: true });\r",
@@ -362,6 +363,13 @@
 											"});\r",
 											"pm.test(\"Content-Type is present\", function () {\r",
 											"    pm.response.to.have.header(\"Content-Type\");\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											"pm.test(\"Content-Type is present\", function () {\r",
+											"    pm.response.to.have.header(\"Content-Type\",Application/JSON);\r",
 											"});"
 										],
 										"type": "text/javascript",
@@ -600,6 +608,66 @@
 					"item": [
 						{
 							"name": "create New User",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "9fa2900b-9fcc-4ede-8466-1b99221a0b58",
+										"exec": [
+											"// Validate response status\r",
+											"pm.test(\"Your test name\", function () {\r",
+											"    var jsonData = pm.response.json();\r",
+											"    pm.expect(jsonData.value).to.eql(100);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"✅ Status code is 201\", function () {\r",
+											"  pm.response.to.have.status(201);\r",
+											"});\r",
+											"//Extract the userId and store it as a collection/environment variable:\r",
+											"const response = pm.response.json();\r",
+											"pm.collectionVariables.set(\"userId\", response.data.userId);  // assuming ResponseDto structure\r",
+											"\r",
+											"\r",
+											"// Parse the response body\r",
+											"const response = pm.response.json();\r",
+											"\r",
+											"// ✅ Test: Response contains required fields\r",
+											"pm.test(\"✅ Response contains expected keys\", function () {\r",
+											"  pm.expect(response).to.have.property(\"status\");\r",
+											"  pm.expect(response).to.have.property(\"message\");\r",
+											"  pm.expect(response).to.have.property(\"data\");\r",
+											"\r",
+											"  pm.expect(response.data).to.have.property(\"userEmailId\");\r",
+											"  pm.expect(response.data).to.have.property(\"userFirstName\");\r",
+											"  pm.expect(response.data).to.have.property(\"userLastName\");\r",
+											"  pm.expect(response.data).to.have.property(\"userContactNumber\");\r",
+											"  pm.expect(response.data).to.have.property(\"userAddress\");\r",
+											"});\r",
+											"\r",
+											"// ✅ Test: Check values match input (for Collection Runner)\r",
+											"pm.test(\"✅ Response values match request input\", function () {\r",
+											"  pm.expect(response.data.userEmailId).to.eql(data.userEmailId);\r",
+											"  pm.expect(response.data.userFirstName).to.eql(data.userFirstName);\r",
+											"  pm.expect(response.data.userLastName).to.eql(data.userLastName);\r",
+											"  pm.expect(response.data.userContactNumber).to.eql(data.userContactNumber);\r",
+											"});\r",
+											"\r",
+											"// ✅ Test: Address fields present\r",
+											"pm.test(\"✅ Address has required fields\", function () {\r",
+											"  const address = response.data.userAddress;\r",
+											"  pm.expect(address).to.have.property(\"addressId\");\r",
+											"  pm.expect(address).to.have.property(\"plotNumber\");\r",
+											"  pm.expect(address).to.have.property(\"street\");\r",
+											"  pm.expect(address).to.have.property(\"state\");\r",
+											"  pm.expect(address).to.have.property(\"country\");\r",
+											"  pm.expect(address).to.have.property(\"zipCode\");\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
 							"id": "aaba5e7a-bab7-485e-bf3f-e67b04b4bdc4",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
@@ -697,7 +765,7 @@
 								"disableBodyPruning": true
 							},
 							"request": {
-								"method": "GET",
+								"method": "POST",
 								"header": []
 							},
 							"response": []
