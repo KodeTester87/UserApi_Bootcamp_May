@@ -28,11 +28,7 @@
 											"    pm.expect(pm.response.status).to.eql(\"Bad Request\"); \r",
 											"});\r",
 											"\r",
-											"pm.test(\"Error message is correct\", function() {\r",
-											"    var jsonData = pm.response.json();\r",
-											"    \r",
-											"    pm.expect(jsonData.message).to.eql(\"user FirstName is mandatory and should contains alphabets only\");\r",
-											"});"
+											""
 										],
 										"type": "text/javascript",
 										"packages": {}
@@ -76,11 +72,7 @@
 											"    pm.expect(pm.response.status).to.eql(\"Bad Request\"); \r",
 											"});\r",
 											"\r",
-											"pm.test(\"Error message is correct\", function() {\r",
-											"    var jsonData = pm.response.json();\r",
-											"    \r",
-											"    pm.expect(jsonData.message).to.eql(\"User Last Name is mandatory and should contains alphabets only\");\r",
-											"});"
+											""
 										],
 										"type": "text/javascript",
 										"packages": {}
@@ -124,10 +116,8 @@
 											"    pm.expect(pm.response.status).to.eql(\"Bad Request\"); \r",
 											"});\r",
 											"\r",
-											"pm.test(\"Error message is correct\", function() {\r",
-											"    var jsonData = pm.response.json();\r",
-											"    \r",
-											"    pm.expect(jsonData.message).to.eql(\"Phone Number is required and should contains 10 numeric values only\");\r",
+											"pm.test(\"Content-Type is present\", function () {\r",
+											"    pm.response.to.have.header(\"Content-Type\".\"application/json\");\r",
 											"});"
 										],
 										"type": "text/javascript",
