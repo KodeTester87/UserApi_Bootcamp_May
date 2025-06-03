@@ -828,6 +828,24 @@
 								"url": "{{baseurl}}/{{getuserendpoint}}/0"
 							},
 							"response": []
+						},
+						{
+							"name": "Invalid FirstName",
+							"id": "afb59a8a-2028-4fec-bf26-1b486e17b86f",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"url": "{{baseUrl}}/users/username/Numpy45"
+							},
+							"response": []
 						}
 					],
 					"id": "79ae9ab1-03c9-446d-a96f-43a1935664a3",
