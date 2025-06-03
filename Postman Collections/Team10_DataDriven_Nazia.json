@@ -158,7 +158,10 @@
 									"script": {
 										"id": "bd2832e8-5e61-4990-9aa4-a4cc9112e57f",
 										"exec": [
-											"pm.test(\"Status code is 400\",function(){\r",
+											"pm.test(\"Status code is 400\", function () {\r",
+											"pm.test(\"Content-Type is present\", function () {\r",
+											"    pm.response.to.have.header(\"Content-Type\",\"application/json\");\r",
+											"});\r",
 											"    pm.response.to.have.status(400);\r",
 											"    console.log(pm.response.code)\r",
 											"});\r",
