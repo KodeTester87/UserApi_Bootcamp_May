@@ -2203,6 +2203,7 @@
 								{
 									"listen": "test",
 									"script": {
+										"id": "88370838-98f2-46ba-a7cc-169ff2b9acfe",
 										"exec": [
 											"pm.test(\"Status code is 200\",function(){\r",
 											"    pm.response.to.have.status(200);\r",
@@ -2213,11 +2214,16 @@
 											"pm.test(\"Check for successful response message\", function () {\r",
 											"    pm.expect(pm.response.status).to.eql(\"OK\"); \r",
 											"});\r",
+											"\r",
+											"//User Successfully Deleted Validation\r",
+											"pm.test(\"Response message confirms deletion\", function () {\r",
+											"    const res = pm.response.json();\r",
+											"    pm.expect(res.message).to.include(\"User is deleted successfully\");\r",
+											"});\r",
 											""
 										],
 										"type": "text/javascript",
-										"packages": {},
-										"id": "88370838-98f2-46ba-a7cc-169ff2b9acfe"
+										"packages": {}
 									}
 								}
 							],
@@ -2353,7 +2359,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "a05f153c-8912-4717-88a9-bb9ecb0de9b0",
+				"id": "9a156144-e658-484a-bcdb-1352b5d5c49e",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -2364,7 +2370,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "0acd7037-6c0d-41c0-96c9-f6ae72bb4413",
+				"id": "81594899-9725-4a60-bc36-97142992c14d",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -2428,7 +2434,7 @@
 		},
 		{
 			"key": "deleteuser",
-			"value": "",
+			"value": "deleteuser",
 			"type": "string"
 		}
 	]
