@@ -2234,7 +2234,7 @@
 							"request": {
 								"method": "DELETE",
 								"header": [],
-								"url": "{{baseurl}}/{{deleteuser}}/username/{{userFirstname}}"
+								"url": "{{baseurl}}/{{deleteuser}}/username/{{userFirstName}}"
 							},
 							"response": []
 						},
@@ -2244,6 +2244,7 @@
 								{
 									"listen": "test",
 									"script": {
+										"id": "ea348cf4-ed8e-4b2f-8d40-be3cc8e1bfa8",
 										"exec": [
 											"pm.test(\"Status code is 200\",function(){\r",
 											"    pm.response.to.have.status(200);\r",
@@ -2259,8 +2260,7 @@
 											""
 										],
 										"type": "text/javascript",
-										"packages": {},
-										"id": "ea348cf4-ed8e-4b2f-8d40-be3cc8e1bfa8"
+										"packages": {}
 									}
 								}
 							],
@@ -2271,7 +2271,7 @@
 							"request": {
 								"method": "DELETE",
 								"header": [],
-								"url": "{{baseurl}}/{{deleteuser}}/2058"
+								"url": "{{baseurl}}/{{deleteuser}}/{{userId}}"
 							},
 							"response": []
 						},
