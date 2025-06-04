@@ -203,7 +203,7 @@
 								{
 									"listen": "test",
 									"script": {
-										"id": "83b1ad91-0c14-41b2-a4aa-d6b3f547ade2",
+										"id": "8540b6e9-7636-4c32-9970-0793cd90aa88",
 										"exec": [
 											"pm.test(\"Status code is 400\",function(){\r",
 											"    pm.response.to.have.status(400);\r",
@@ -214,7 +214,11 @@
 											"    pm.expect(pm.response.status).to.eql(\"Bad Request\"); \r",
 											"});\r",
 											"\r",
-											""
+											"pm.test(\"Error message is correct\", function() {\r",
+											"    var jsonData = pm.response.json();\r",
+											"    \r",
+											"    pm.expect(jsonData.message).to.eql(\"Plot number should contain alphaNumeric values only\");\r",
+											"});"
 										],
 										"type": "text/javascript",
 										"packages": {}
