@@ -88,7 +88,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n  \"userContactNumber\": \"3456789450\",\r\n  \"userEmailId\": \"{{EmailId}}\",\r\n  \"userFirstName\": \"{{firstName}}\",\r\n  \"userLastName\": \"{{invalidlastName}}\",\r\n  \"userAddress\": {\r\n    \"plotNumber\": \"{{plotNumber}}\",\r\n    \"Street\": \"{{street}}\",\r\n    \"state\": \"{{state}}\",\r\n    \"Country\": \"{{country}}\",\r\n    \"zipCode\": \"{{zipCode}}\"\r\n  }\r\n}\r\n",
+									"raw": "{\r\n  \"userContactNumber\": \"3456429450\",\r\n  \"userEmailId\": \"{{EmailId}}\",\r\n  \"userFirstName\": \"{{firstName}}\",\r\n  \"userLastName\": \"{{invalidlastName}}\",\r\n  \"userAddress\": {\r\n    \"plotNumber\": \"{{plotNumber}}\",\r\n    \"street\": \"{{street}}\",\r\n    \"state\": \"{{state}}\",\r\n    \"country\": \"{{country}}\",\r\n    \"zipCode\": \"{{zipCode}}\"\r\n  }\r\n}\r\n",
 									"options": {
 										"raw": {
 											"language": "json"
