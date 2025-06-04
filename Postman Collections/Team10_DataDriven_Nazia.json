@@ -2229,7 +2229,7 @@
 							"request": {
 								"method": "DELETE",
 								"header": [],
-								"url": "{{baseurl}}/{{deleteuser}}/username/{{userFirstName}}"
+								"url": "{{baseurl}}{{deleteuser}}/username/{{userFirstName}}"
 							},
 							"response": []
 						},
