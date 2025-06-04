@@ -615,7 +615,10 @@
 											"    const response = pm.response.json();\r",
 											"    pm.expect(response.user_id).to.eql(parseInt(pm.environment.get(\"userId\")));\r",
 											"});\r",
-											""
+											"\r",
+											"//Fetch userId from environment variables and log it to console.\r",
+											"const userId = pm.environment.get(\"userId\");\r",
+											"console.log(\"Using userId:\", userId);"
 										],
 										"type": "text/javascript",
 										"packages": {}
