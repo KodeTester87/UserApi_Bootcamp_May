@@ -2217,7 +2217,7 @@
 											"// Unset environment variables used in chaining\r",
 											"pm.environment.unset(\"userFirstname\");\r",
 											"\r",
-											"// Optional: confirm in console\r",
+											"//  confirm in console\r",
 											"console.log(\"Environment variables cleared: userId, userFirstname\");\r",
 											"\r",
 											"\r",
