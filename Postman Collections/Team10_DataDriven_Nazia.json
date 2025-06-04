@@ -740,41 +740,38 @@
 											"\r",
 											"// Validate schema for each user object in the array\r",
 											"const schema = {\r",
-											"  \"type\": \"array\",\r",
-											"  \"items\": {\r",
-											"    \"type\": \"object\",\r",
-											"    \"properties\": {\r",
-											"      \"user_id\": { \"type\": \"integer\" },\r",
-											"      \"user_first_name\": { \"type\": \"string\" },\r",
-											"      \"user_last_name\": { \"type\": \"string\" },\r",
-											"      \"user_contact_number\": { \"type\": \"integer\" },\r",
-											"      \"user_email_id\": { \"type\": \"string\" },\r",
-											"      \"creation_time\": { \"type\": \"string\" },\r",
-											"      \"last_mod_time\": { \"type\": \"string\" },\r",
-											"      \"userAddress\": {\r",
-											"        \"type\": \"object\",\r",
-											"        \"properties\": {\r",
-											"          \"addressId\": { \"type\": \"integer\" },\r",
-											"          \"plotNumber\": { \"type\": \"string\" },\r",
-											"          \"street\": { \"type\": \"string\" },\r",
-											"          \"state\": { \"type\": \"string\" },\r",
-											"          \"country\": { \"type\": \"string\" },\r",
-											"          \"zipCode\": { \"type\": \"integer\" }\r",
-											"        },\r",
-											"        \"required\": [\"addressId\", \"plotNumber\", \"street\", \"state\", \"country\", \"zipCode\"]\r",
-											"      }\r",
-											"    },\r",
-											"    \"required\": [\r",
-											"      \"user_id\",\r",
-											"      \"user_first_name\",\r",
-											"      \"user_last_name\",\r",
-											"      \"user_contact_number\",\r",
-											"      \"user_email_id\",\r",
-											"      \"creation_time\",\r",
-											"      \"last_mod_time\",\r",
-											"      \"userAddress\"\r",
-											"    ]\r",
-											"  }\r",
+											"  \"type\": \"object\",\r",
+											"  \"properties\": {\r",
+											"    \"userId\": { \"type\": \"integer\" },\r",
+											"    \"userFirstName\": { \"type\": \"string\" },\r",
+											"    \"userLastName\": { \"type\": \"string\" },\r",
+											"    \"userContactNumber\": { \"type\": \"integer\" },\r",
+											"    \"userEmailId\": { \"type\": \"string\" },\r",
+											"    \"creationTime\": { \"type\": \"string\", \"format\": \"date-time\" },\r",
+											"    \"lastModTime\": { \"type\": \"string\", \"format\": \"date-time\" },\r",
+											"    \"userAddress\": {\r",
+											"      \"type\": \"object\",\r",
+											"      \"properties\": {\r",
+											"        \"addressId\": { \"type\": \"integer\" },\r",
+											"        \"plotNumber\": { \"type\": \"string\" },\r",
+											"        \"street\": { \"type\": \"string\" },\r",
+											"        \"state\": { \"type\": \"string\" },\r",
+											"        \"country\": { \"type\": \"string\" },\r",
+											"        \"zipCode\": { \"type\": \"integer\" }\r",
+											"      },\r",
+											"      \"required\": [\"addressId\", \"plotNumber\", \"street\", \"state\", \"country\", \"zipCode\"]\r",
+											"    }\r",
+											"  },\r",
+											"  \"required\": [\r",
+											"    \"userId\",\r",
+											"    \"userFirstName\",\r",
+											"    \"userLastName\",\r",
+											"    \"userContactNumber\",\r",
+											"    \"userEmailId\",\r",
+											"    \"creationTime\",\r",
+											"    \"lastModTime\",\r",
+											"    \"userAddress\"\r",
+											"  ]\r",
 											"};\r",
 											"\r",
 											"pm.test(\"Validate schema for GET by first name\", function () {\r",
@@ -812,6 +809,7 @@
 								{
 									"listen": "test",
 									"script": {
+										"id": "26f49e05-9970-48f2-9b45-26b1f1414144",
 										"exec": [
 											"pm.test(\"Status code is 404\",function(){\r",
 											"    pm.response.to.have.status(404);\r",
@@ -824,8 +822,7 @@
 											""
 										],
 										"type": "text/javascript",
-										"packages": {},
-										"id": "26f49e05-9970-48f2-9b45-26b1f1414144"
+										"packages": {}
 									}
 								}
 							],
@@ -919,7 +916,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"user_first_name\": \"{{invalidfirstName}}\",\r\n    \"user_last_name\": \"{{lastName}}\",\r\n    \"user_contact_number\": \"{{contactNumber}}\",\r\n    \"user_email_id\": \"{{emailid}}\",\r\n    \"userAddress\": {\r\n        \"plotNumber\": \"{{plotNumber}}\",\r\n        \"Street\": \"{{street}}\",\r\n        \"state\": \"{{state}}\",\r\n        \"Country\": \"{{country}}\",\r\n        \"zipCode\": \"{{zipcode}}\"\r\n    }\r\n}",
+									"raw": "{\r\n  \"userFirstName\": \"{{invalidfirstName}}\",\r\n  \"userLastName\": \"{{lastName}}\",\r\n  \"userContactNumber\": \"{{contactNumber}}\",\r\n  \"userEmailId\": \"{{emailId}}\",\r\n  \"userAddress\": {\r\n    \"plotNumber\": \"{{plotNumber}}\",\r\n    \"street\": \"{{street}}\",\r\n    \"state\": \"{{state}}\",\r\n    \"country\": \"{{country}}\",\r\n    \"zipCode\": {{zipCode}}\r\n  }\r\n}\r\n",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -967,7 +964,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"user_first_name\": \"{{firstName}}\",\r\n    \"user_last_name\": \"{{invalidlastName}}\",\r\n    \"user_contact_number\": \"{{contactNumber}}\",\r\n    \"user_email_id\": \"{{emailid}}\",\r\n    \"userAddress\": {\r\n        \"plotNumber\": \"{{plotNumber}}\",\r\n        \"Street\": \"{{street}}\",\r\n        \"state\": \"{{state}}\",\r\n        \"Country\": \"{{country}}\",\r\n        \"zipCode\": \"{{zipcode}}\"\r\n    }\r\n}",
+									"raw": "{\r\n  \"userFirstName\": \"{{firstName}}\",\r\n  \"userLastName\": \"{{invalidlastName}}\",\r\n  \"userContactNumber\": \"{{contactNumber}}\",\r\n  \"userEmailId\": \"{{emailId}}\",\r\n  \"userAddress\": {\r\n    \"plotNumber\": \"{{plotNumber}}\",\r\n    \"street\": \"{{street}}\",\r\n    \"state\": \"{{state}}\",\r\n    \"country\": \"{{country}}\",\r\n    \"zipCode\": {{zipCode}}\r\n  }\r\n}\r\n",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -1015,7 +1012,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"user_first_name\": \"{{firstName}}\",\r\n    \"user_last_name\": \"{{lastName}}\",\r\n    \"user_contact_number\": \"{{invalidcontactNumber}}\",\r\n    \"user_email_id\": \"{{emailid}}\",\r\n    \"userAddress\": {\r\n        \"plotNumber\": \"{{plotNumber}}\",\r\n        \"Street\": \"{{street}}\",\r\n        \"state\": \"{{state}}\",\r\n        \"Country\": \"{{country}}\",\r\n        \"zipCode\": \"{{zipcode}}\"\r\n    }\r\n}",
+									"raw": "{\r\n  \"userFirstName\": \"{{firstName}}\",\r\n  \"userLastName\": \"{{lastName}}\",\r\n  \"userContactNumber\": \"{{invalidcontactNumber}}\",\r\n  \"userEmailId\": \"{{emailId}}\",\r\n  \"userAddress\": {\r\n    \"plotNumber\": \"{{plotNumber}}\",\r\n    \"street\": \"{{street}}\",\r\n    \"state\": \"{{state}}\",\r\n    \"country\": \"{{country}}\",\r\n    \"zipCode\": {{zipCode}}\r\n  }\r\n}\r\n",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -1063,7 +1060,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"user_first_name\": \"{{firstName}}\",\r\n    \"user_last_name\": \"{{lastName}}\",\r\n    \"user_contact_number\": \"{{contactNumber}}\",\r\n    \"user_email_id\": \"{{invalidemailid}}\",\r\n    \"userAddress\": {\r\n        \"plotNumber\": \"{{plotNumber}}\",\r\n        \"Street\": \"{{street}}\",\r\n        \"state\": \"{{state}}\",\r\n        \"Country\": \"{{country}}\",\r\n        \"zipCode\": \"{{zipcode}}\"\r\n    }\r\n}",
+									"raw": "{\r\n  \"userFirstName\": \"{{firstName}}\",\r\n  \"userLastName\": \"{{lastName}}\",\r\n  \"userContactNumber\": \"{{contactNumber}}\",\r\n  \"userEmailId\": \"{{invalidemailId}}\",\r\n  \"userAddress\": {\r\n    \"plotNumber\": \"{{plotNumber}}\",\r\n    \"street\": \"{{street}}\",\r\n    \"state\": \"{{state}}\",\r\n    \"country\": \"{{country}}\",\r\n    \"zipCode\": {{zipCode}}\r\n  }\r\n}\r\n",
 									"options": {
 										"raw": {
 											"language": "json"
