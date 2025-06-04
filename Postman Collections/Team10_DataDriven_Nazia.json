@@ -414,7 +414,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n  \"user_first_name\": \"{{firstName}}\",\r\n  \"user_last_name\": \"{{lastName}}\",\r\n  \"user_contact_number\": \"{{ContactNumber}}\",\r\n  \"user_email_id\": \"{{EmailId}}\",\r\n  \"userAddress\": {\r\n    \"plotNumber\": \"{{plotNumber}}\",\r\n    \"Street\": \"{{street}}\",\r\n    \"state\": \"{{state}}\",\r\n    \"Country\": \"{{country}}\",\r\n    \"zipCode\": \"{{invalidzipcode}}\"\r\n  }\r\n}\r\n",
+									"raw": "{\r\n  \"userFirstName\": \"{{firstName}}\",\r\n  \"userLastName\": \"{{lastName}}\",\r\n  \"userContactNumber\": \"{{contactNumber}}\",\r\n  \"userEmailId\": \"{{emailId}}\",\r\n  \"userAddress\": {\r\n    \"plotNumber\": \"{{plotNumber}}\",\r\n    \"street\": \"{{street}}\",\r\n    \"state\": \"{{state}}\",\r\n    \"country\": \"{{country}}\",\r\n    \"zipCode\": \"{{invalidzipCode}}\"  // Invalid if zipCode is expected to be a number\r\n  }\r\n}\r\n",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -504,7 +504,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n  \"user_first_name\": \"{{firstName}}\",\r\n  \"user_last_name\": \"{{lastName}}\",\r\n  \"user_contact_number\": \"{{ContactNumber}}\",\r\n  \"user_email_id\": \"{{EmailId}}\",\r\n  \"userAddress\": {\r\n    \"plotNumber\": \"{{plotNumber}}\",\r\n    \"Street\": \"{{street}}\",\r\n    \"state\": \"{{state}}\",\r\n    \"Country\": \"{{country}}\",\r\n    \"zipCode\": \"{{zipCode}}\"\r\n  }\r\n}\r\n",
+									"raw": "{\r\n  \"userFirstName\": \"{{firstName}}\",\r\n  \"userLastName\": \"{{lastName}}\",\r\n  \"userContactNumber\": \"{{contactNumber}}\",\r\n  \"userEmailId\": \"{{emailId}}\",\r\n  \"userAddress\": {\r\n    \"plotNumber\": \"{{plotNumber}}\",\r\n    \"street\": \"{{street}}\",\r\n    \"state\": \"{{state}}\",\r\n    \"country\": \"{{country}}\",\r\n    \"zipCode\": {{zipCode}}\r\n  }\r\n}\r\n",
 									"options": {
 										"raw": {
 											"language": "json"
