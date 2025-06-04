@@ -2356,7 +2356,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "9a156144-e658-484a-bcdb-1352b5d5c49e",
+				"id": "4e165adb-ef5e-4cee-8341-964453ee0750",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -2367,7 +2367,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "81594899-9725-4a60-bc36-97142992c14d",
+				"id": "c08d3514-2724-4734-80cf-eeaa67c2f52b",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -2423,11 +2423,6 @@
 			"key": "userFirstName",
 			"value": "",
 			"type": "string"
-		},
-		{
-			"key": "userFirstname",
-			"value": "test",
-			"type": "default"
 		},
 		{
 			"key": "deleteuser",
