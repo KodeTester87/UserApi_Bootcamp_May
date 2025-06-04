@@ -470,7 +470,7 @@
 											"\r",
 											"// Set environment variables for chaining\r",
 											"const responseData = pm.response.json();\r",
-											"pm.environment.set(\"userId\", responseData.user_id);\r",
+											"pm.environment.set(\"userId\", responseData.userId);\r",
 											"pm.environment.set(\"userFirstName\", responseData.user_first_name);\r",
 											"\r",
 											"//  Check response time\r",
