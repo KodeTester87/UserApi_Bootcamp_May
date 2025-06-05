@@ -2231,14 +2231,41 @@
 							"response": []
 						},
 						{
-							"name": "New Request",
+							"name": "Update InvalidEmail",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "e34958df-49ed-4bef-bb56-2d36b92fb46c",
+										"exec": [
+											"pm.test(\"Status code is 400\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});\r",
+											"\r",
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
 							"id": "6b0518e3-6087-403a-8e0e-81b13eb11c6d",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
 							},
 							"request": {
-								"method": "GET",
-								"header": []
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"userEmailId\": \"invalid-email\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseurl}}/uap/updateuserfields/{{userId}}"
 							},
 							"response": []
 						}
