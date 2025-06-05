@@ -2343,6 +2343,36 @@
 					}
 				}
 			]
+		},
+		{
+			"name": "Patch User",
+			"item": [
+				{
+					"name": "Update UserEmail",
+					"id": "1038250a-0427-42e2-986c-a663ed55121b",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "Update User Copy",
+					"id": "6dafc5be-8696-4592-9c5e-b963e1828c2f",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			],
+			"id": "5381538f-022b-4973-95cc-28a1ce2d1177"
 		}
 	],
 	"auth": {
