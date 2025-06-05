@@ -2184,6 +2184,68 @@
 					]
 				},
 				{
+					"name": "Patch User",
+					"item": [
+						{
+							"name": "Update UserEmail",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "f65254ec-f796-4136-b48a-eea3ce7bc86b",
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											"\r",
+											"//Validate Response Contains Updated Email\r",
+											"pm.test(\"Validate updated email in response body\", function () {\r",
+											"    const res = pm.response.json();\r",
+											"    pm.expect(res.data.userEmailId).to.eql(pm.environment.get(\"updatedEmail\"));\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"id": "1038250a-0427-42e2-986c-a663ed55121b",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"userEmailId\": \"{{updatedEmail}}\"\r\n  \r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseurl}}/uap/updateuserfields/{{userId}}\n"
+							},
+							"response": []
+						},
+						{
+							"name": "New Request",
+							"id": "6b0518e3-6087-403a-8e0e-81b13eb11c6d",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": []
+							},
+							"response": []
+						}
+					],
+					"id": "5381538f-022b-4973-95cc-28a1ce2d1177"
+				},
+				{
 					"name": "DeleteUser",
 					"item": [
 						{
@@ -2343,46 +2405,6 @@
 					}
 				}
 			]
-		},
-		{
-			"name": "Patch User",
-			"item": [
-				{
-					"name": "Update UserEmail",
-					"id": "1038250a-0427-42e2-986c-a663ed55121b",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"method": "PATCH",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n  \"userEmailId\": \"{{updatedEmail}}\"\r\n  \r\n}\r\n",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": "{{baseurl}}/uap/updateuserfields/{{userId}}\n"
-					},
-					"response": []
-				},
-				{
-					"name": "Update User Copy",
-					"id": "6dafc5be-8696-4592-9c5e-b963e1828c2f",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"method": "GET",
-						"header": []
-					},
-					"response": []
-				}
-			],
-			"id": "5381538f-022b-4973-95cc-28a1ce2d1177"
 		}
 	],
 	"auth": {
