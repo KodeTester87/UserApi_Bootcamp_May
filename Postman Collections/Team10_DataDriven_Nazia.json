@@ -1,0 +1,2495 @@
+{
+	"info": {
+		"_postman_id": "726cc760-2926-4768-bdd2-c3c99598c828",
+		"name": "UserAPI",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "uap",
+			"item": [
+				{
+					"name": "PostUser",
+					"item": [
+						{
+							"name": "Create user with invalid first name",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "666003d1-f369-44d7-8b04-32ffb1dfecc5",
+										"exec": [
+											"pm.test(\"Status code is 400\",function(){\r",
+											"    pm.response.to.have.status(400);\r",
+											"    console.log(pm.response.code)\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check status line\", function () {\r",
+											"    pm.expect(pm.response.status).to.eql(\"Bad Request\"); \r",
+											"});\r",
+											"\r",
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"id": "0446272d-e512-42d5-8354-622e819155d3",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"userFirstName\": \"{{invalidfirstName}}\",\r\n  \"userLastName\": \"{{lastName}}\",\r\n  \"userContactNumber\": \"{{contactNumber}}\",\r\n  \"userEmailId\": \"{{emailId}}\",\r\n  \"userAddress\": {\r\n    \"plotNumber\": \"{{plotNumber}}\",\r\n    \"street\": \"{{street}}\",\r\n    \"state\": \"{{state}}\",\r\n    \"country\": \"{{country}}\",\r\n    \"zipCode\": {{zipCode}}\r\n  }\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseurl}}/{{postendpoint}}"
+							},
+							"response": []
+						},
+						{
+							"name": "Create user with invalid last name",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "5bafe0aa-20ee-4e18-a5af-01036053016f",
+										"exec": [
+											"pm.test(\"Status code is 400\",function(){\r",
+											"    pm.response.to.have.status(400);\r",
+											"    console.log(pm.response.code)\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check status line\", function () {\r",
+											"    pm.expect(pm.response.status).to.eql(\"Bad Request\"); \r",
+											"});\r",
+											"\r",
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"id": "f7a7ffdc-e546-4e1b-8440-45db1f6dbbbd",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"userFirstName\": \"{{firstName}}\",\r\n  \"userLastName\": \"{{invalidlastName}}\",\r\n  \"userContactNumber\": \"{{contactNumber}}\",\r\n  \"userEmailId\": \"{{emailId}}\",\r\n  \"userAddress\": {\r\n    \"plotNumber\": \"{{plotNumber}}\",\r\n    \"street\": \"{{street}}\",\r\n    \"state\": \"{{state}}\",\r\n    \"country\": \"{{country}}\",\r\n    \"zipCode\": {{zipCode}}\r\n  }\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseurl}}/{{postendpoint}}"
+							},
+							"response": []
+						},
+						{
+							"name": "Create user with invalid contact Number",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "b1f8b702-8361-4d95-8b41-11c0707c3a7f",
+										"exec": [
+											"pm.test(\"Status code is 400\",function(){\r",
+											"    pm.response.to.have.status(400);\r",
+											"    console.log(pm.response.code)\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check status line\", function () {\r",
+											"    pm.expect(pm.response.status).to.eql(\"Bad Request\"); \r",
+											"});\r",
+											"\r",
+											"pm.test(\"Content-Type is present\", function () {\r",
+											"    pm.response.to.have.header(\"Content-Type\",\"application/json\");\r",
+											"});\r",
+											"pm.test(\"Response time is less than 200ms\", function () {\r",
+											"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+											"});\r",
+											"// Stores the specificField value in an environment or global variable\r",
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"id": "87c30053-62c8-4c82-8073-c0c0c142953c",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"userFirstName\": \"{{firstName}}\",\r\n  \"userLastName\": \"{{lastName}}\",\r\n  \"userContactNumber\": \"{{invalidcontactNumber}}\",\r\n  \"userEmailId\": \"{{emailId}}\",\r\n  \"userAddress\": {\r\n    \"plotNumber\": \"{{plotNumber}}\",\r\n    \"street\": \"{{street}}\",\r\n    \"state\": \"{{state}}\",\r\n    \"country\": \"{{country}}\",\r\n    \"zipCode\": {{zipCode}}\r\n  }\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseurl}}/{{postendpoint}}"
+							},
+							"response": []
+						},
+						{
+							"name": "Create user with invalid emailId",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "bd2832e8-5e61-4990-9aa4-a4cc9112e57f",
+										"exec": [
+											"pm.test(\"Status code is 400\", function () {\r",
+											"pm.test(\"Content-Type is present\", function () {\r",
+											"    pm.response.to.have.header(\"Content-Type\",\"application/json\");\r",
+											"});\r",
+											"    pm.response.to.have.status(400);\r",
+											"    console.log(pm.response.code)\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check status line\", function () {\r",
+											"    pm.expect(pm.response.status).to.eql(\"Bad Request\"); \r",
+											"});\r",
+											"\r",
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"id": "c1dcaa95-fb1a-46e3-a39b-948a7fd5bdec",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"userFirstName\": \"{{firstName}}\",\r\n  \"userLastName\": \"{{lastName}}\",\r\n  \"userContactNumber\": \"{{contactNumber}}\",\r\n  \"userEmailId\": \"{{invalidemailId}}\",\r\n  \"userAddress\": {\r\n    \"plotNumber\": \"{{plotNumber}}\",\r\n    \"street\": \"{{street}}\",\r\n    \"state\": \"{{state}}\",\r\n    \"country\": \"{{country}}\",\r\n    \"zipCode\": {{zipCode}}\r\n  }\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseurl}}/{{postendpoint}}"
+							},
+							"response": []
+						},
+						{
+							"name": "Create user with invalid plot Number",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "8540b6e9-7636-4c32-9970-0793cd90aa88",
+										"exec": [
+											"pm.test(\"Status code is 400\",function(){\r",
+											"    pm.response.to.have.status(400);\r",
+											"    console.log(pm.response.code)\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check status line\", function () {\r",
+											"    pm.expect(pm.response.status).to.eql(\"Bad Request\"); \r",
+											"});\r",
+											"\r",
+											"pm.test(\"Error message is correct\", function() {\r",
+											"    var jsonData = pm.response.json();\r",
+											"    \r",
+											"    pm.expect(jsonData.message).to.eql(\"Plot number should contain alphaNumeric values only\");\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"id": "5bd99bbf-ccb5-4579-bde8-ac89e2de83dd",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"userFirstName\": \"{{firstName}}\",\r\n  \"userLastName\": \"{{lastName}}\",\r\n  \"userContactNumber\": \"{{contactNumber}}\",\r\n  \"userEmailId\": \"{{emailId}}\",\r\n  \"userAddress\": {\r\n    \"plotNumber\": \"{{invalidplotNumber}}\",\r\n    \"street\": \"{{street}}\",\r\n    \"state\": \"{{state}}\",\r\n    \"country\": \"{{country}}\",\r\n    \"zipCode\": {{zipCode}}\r\n  }\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseurl}}/{{postendpoint}}"
+							},
+							"response": []
+						},
+						{
+							"name": "Create user with invalid street",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "8ad3b8cf-7543-42c9-9c44-c5eb8155efe3",
+										"exec": [
+											"pm.test(\"Status code is 400\",function(){\r",
+											"    pm.response.to.have.status(400);\r",
+											"    console.log(pm.response.code)\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check status line\", function () {\r",
+											"    pm.expect(pm.response.status).to.eql(\"Bad Request\"); \r",
+											"});\r",
+											"\r",
+											"pm.test(\"Error message is correct\", function() {\r",
+											"    var jsonData = pm.response.json();\r",
+											"    \r",
+											"    pm.expect(jsonData.message).to.eql(\"Street should contain alphabet characters only\");\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"id": "c7cc074d-e4c2-45bd-ad01-44cc9f3cdb26",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"userFirstName\": \"{{firstName}}\",\r\n  \"userLastName\": \"{{lastName}}\",\r\n  \"userContactNumber\": \"{{contactNumber}}\",\r\n  \"userEmailId\": \"{{emailId}}\",\r\n  \"userAddress\": {\r\n    \"plotNumber\": \"{{plotNumber}}\",\r\n    \"street\": \"{{invalidstreet}}\",\r\n    \"state\": \"{{state}}\",\r\n    \"country\": \"{{country}}\",\r\n    \"zipCode\": {{zipCode}}\r\n  }\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseurl}}/{{postendpoint}}"
+							},
+							"response": []
+						},
+						{
+							"name": "Create user with invalid state",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "bf31bfee-20fb-474b-a5bc-6a2804a2475f",
+										"exec": [
+											"pm.test(\"Status code is 400\",function(){\r",
+											"    pm.response.to.have.status(400);\r",
+											"    console.log(pm.response.code)\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check status line\", function () {\r",
+											"    pm.expect(pm.response.status).to.eql(\"Bad Request\"); \r",
+											"});\r",
+											"\r",
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"id": "b6d73262-bbf7-40d6-ade0-fe093a2f8078",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"userFirstName\": \"{{firstName}}\",\r\n  \"userLastName\": \"{{lastName}}\",\r\n  \"userContactNumber\": \"{{contactNumber}}\",\r\n  \"userEmailId\": \"{{emailId}}\",\r\n  \"userAddress\": {\r\n    \"plotNumber\": \"{{plotNumber}}\",\r\n    \"street\": \"{{street}}\",\r\n    \"state\": \"{{invalidstate}}\",\r\n    \"country\": \"{{country}}\",\r\n    \"zipCode\": {{zipCode}}\r\n  }\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseurl}}/{{postendpoint}}"
+							},
+							"response": []
+						},
+						{
+							"name": "Create user with invalid country",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "7769f3c9-8a66-482a-ab65-9dbddef8c3ad",
+										"exec": [
+											"pm.test(\"Status code is 400\",function(){\r",
+											"    pm.response.to.have.status(400);\r",
+											"    console.log(pm.response.code)\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check status line\", function () {\r",
+											"    pm.expect(pm.response.status).to.eql(\"Bad Request\"); \r",
+											"});\r",
+											"\r",
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"id": "e2e39b11-ffb4-4c4a-bb0e-41bb81285894",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"userFirstName\": \"{{firstName}}\",\r\n  \"userLastName\": \"{{lastName}}\",\r\n  \"userContactNumber\": \"{{contactNumber}}\",\r\n  \"userEmailId\": \"{{emailId}}\",\r\n  \"userAddress\": {\r\n    \"plotNumber\": \"{{plotNumber}}\",\r\n    \"street\": \"{{street}}\",\r\n    \"state\": \"{{state}}\",\r\n    \"country\": \"{{invalidcountry}}\",\r\n    \"zipCode\": {{zipCode}}\r\n  }\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseurl}}/{{postendpoint}}"
+							},
+							"response": []
+						},
+						{
+							"name": "Create user with invalid zipcode",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "de4b9789-0fd4-41c2-a4b4-81baac2e58d0",
+										"exec": [
+											"pm.test(\"Status code is 400\",function(){\r",
+											"    pm.response.to.have.status(400);\r",
+											"    console.log(pm.response.code)\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check status line\", function () {\r",
+											"    pm.expect(pm.response.status).to.eql(\"Bad Request\"); \r",
+											"});\r",
+											"\r",
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"id": "86191742-c41e-4347-b3b0-81ec6d7058e0",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"userFirstName\": \"{{firstName}}\",\r\n  \"userLastName\": \"{{lastName}}\",\r\n  \"userContactNumber\": \"{{contactNumber}}\",\r\n  \"userEmailId\": \"{{emailId}}\",\r\n  \"userAddress\": {\r\n    \"plotNumber\": \"{{plotNumber}}\",\r\n    \"street\": \"{{street}}\",\r\n    \"state\": \"{{state}}\",\r\n    \"country\": \"{{country}}\",\r\n    \"zipCode\": \"{{invalidzipCode}}\"  \r\n  }\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseurl}}/{{postendpoint}}"
+							},
+							"response": []
+						},
+						{
+							"name": "Create user with valid data",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "05731513-8d17-4814-ad11-f452d5addafc",
+										"exec": [
+											"//  Schema validation\r",
+											"const schema = {\r",
+											"  type: \"object\",\r",
+											"  properties: {\r",
+											"    userId: { type: \"integer\" },\r",
+											"    userFirstName: { type: \"string\" },\r",
+											"    userLastName: { type: \"string\" },\r",
+											"    userContactNumber: { type: \"integer\" },\r",
+											"    userEmailId: { type: \"string\", format: \"email\" },\r",
+											"    creationTime: { type: \"string\", format: \"date-time\" },\r",
+											"    lastModTime: { type: \"string\", format: \"date-time\" },\r",
+											"    userAddress: {\r",
+											"      type: \"object\",\r",
+											"      properties: {\r",
+											"        addressId: { type: \"integer\" },\r",
+											"        plotNumber: { type: \"string\" },\r",
+											"        street: { type: \"string\" },\r",
+											"        state: { type: \"string\" },\r",
+											"        country: { type: \"string\" },\r",
+											"        zipCode: { type: \"integer\" }\r",
+											"      },\r",
+											"      required: [\"addressId\", \"plotNumber\", \"street\", \"state\", \"country\", \"zipCode\"]\r",
+											"    }\r",
+											"  },\r",
+											"  required: [\r",
+											"    \"userId\", \"userFirstName\", \"userLastName\",\r",
+											"    \"userContactNumber\", \"userEmailId\",\r",
+											"    \"creationTime\", \"lastModTime\", \"userAddress\"\r",
+											"  ]\r",
+											"};\r",
+											"\r",
+											"pm.test(\"Validate response schema per contract\", function () {\r",
+											"  pm.response.to.have.jsonSchema(schema);\r",
+											"});\r",
+											"\r",
+											"\r",
+											"// Set environment variables for chaining\r",
+											"const responseData = pm.response.json();\r",
+											"pm.environment.set(\"userId\", responseData.userId);\r",
+											"pm.environment.set(\"userFirstName\", responseData.userFirstName);\r",
+											"\r",
+											"//  Check response time\r",
+											"pm.test(\"Validate response time < 1000ms\", function () {\r",
+											"  pm.expect(pm.response.responseTime).to.be.below(1000);\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "25e85a78-da0d-4610-841d-3ed53afe4b21",
+										"exec": [
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"id": "2344ce84-1186-4c53-b8e6-9d0ba5714f84",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"userFirstName\": \"{{firstName}}\",\r\n  \"userLastName\": \"{{lastName}}\",\r\n  \"userContactNumber\": \"{{contactNumber}}\",\r\n  \"userEmailId\": \"{{emailId}}\",\r\n  \"userAddress\": {\r\n    \"plotNumber\": \"{{plotNumber}}\",\r\n    \"street\": \"{{street}}\",\r\n    \"state\": \"{{state}}\",\r\n    \"country\": \"{{country}}\",\r\n    \"zipCode\": {{zipCode}}\r\n  }\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseurl}}/{{postendpoint}}"
+							},
+							"response": []
+						}
+					],
+					"id": "ec238873-ff9c-49fa-89af-588382d9289d",
+					"auth": {
+						"type": "basic",
+						"basic": {
+							"password": "userapi@2025",
+							"username": "Numpy@gmail.com"
+						}
+					},
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"type": "text/javascript",
+								"packages": {},
+								"exec": [
+									""
+								],
+								"id": "3fdd8fbf-ca77-4a1c-b641-8c50fdecc047"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"packages": {},
+								"exec": [
+									""
+								],
+								"id": "7547c015-f2c0-4b6e-a73e-bff046ae934f"
+							}
+						}
+					]
+				},
+				{
+					"name": "GetUser",
+					"item": [
+						{
+							"name": "byuserid",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "9c1f5b72-5c9b-4498-b2b6-4d61fa7bd476",
+										"exec": [
+											"//  Validate status code\r",
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											"\r",
+											"//  Validate response schema\r",
+											"const schema = {\r",
+											"  \"type\": \"object\",\r",
+											"  \"properties\": {\r",
+											"    \"userId\": { \"type\": \"integer\" },\r",
+											"    \"userFirstName\": { \"type\": \"string\" },\r",
+											"    \"userLastName\": { \"type\": \"string\" },\r",
+											"    \"userContactNumber\": { \"type\": \"integer\" },\r",
+											"    \"userEmailId\": { \"type\": \"string\" },\r",
+											"    \"creationTime\": { \"type\": \"string\", \"format\": \"date-time\" },\r",
+											"    \"lastModTime\": { \"type\": \"string\", \"format\": \"date-time\" },\r",
+											"    \"userAddress\": {\r",
+											"      \"type\": \"object\",\r",
+											"      \"properties\": {\r",
+											"        \"addressId\": { \"type\": \"integer\" },\r",
+											"        \"plotNumber\": { \"type\": \"string\" },\r",
+											"        \"street\": { \"type\": \"string\" },\r",
+											"        \"state\": { \"type\": \"string\" },\r",
+											"        \"country\": { \"type\": \"string\" },\r",
+											"        \"zipCode\": { \"type\": \"integer\" }\r",
+											"      },\r",
+											"      \"required\": [\"addressId\", \"plotNumber\", \"street\", \"state\", \"country\", \"zipCode\"]\r",
+											"    }\r",
+											"  },\r",
+											"  \"required\": [\r",
+											"    \"userId\",\r",
+											"    \"userFirstName\",\r",
+											"    \"userLastName\",\r",
+											"    \"userContactNumber\",\r",
+											"    \"userEmailId\",\r",
+											"    \"creationTime\",\r",
+											"    \"lastModTime\",\r",
+											"    \"userAddress\"\r",
+											"  ]\r",
+											"};\r",
+											"\r",
+											"pm.test(\"Validate user schema for GET by ID\", function () {\r",
+											"    pm.response.to.have.jsonSchema(schema);\r",
+											"});\r",
+											"\r",
+											"// check user ID matches the request\r",
+											"pm.test(\"Response user_id matches environment variable\", function () {\r",
+											"    const response = pm.response.json();\r",
+											"    pm.expect(response.user_id).to.eql(parseInt(pm.environment.get(\"userId\")));\r",
+											"});\r",
+											"\r",
+											"//Fetch userId from environment variables and log it to console.\r",
+											"const userId = pm.environment.get(\"userId\");\r",
+											"console.log(\"Using userId:\", userId);"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"id": "cb7141a1-414b-4746-a238-ff3dc70f9742",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "basic",
+									"basic": {
+										"password": "userapi@2025\n",
+										"username": "Numpy@gmail.com"
+									}
+								},
+								"method": "GET",
+								"header": [],
+								"url": "{{baseurl}}/uap/user/{{userId}}"
+							},
+							"response": []
+						},
+						{
+							"name": "getallusers",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "357a7a65-7a32-449f-8abf-2b6071dac3bc",
+										"exec": [
+											"pm.test(\"Status code is 200\",function(){\r",
+											"    pm.response.to.have.status(200);\r",
+											"    console.log(pm.response.code)\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check status line\", function () {\r",
+											"    pm.expect(pm.response.status).to.eql(\"OK\"); \r",
+											"});\r",
+											"\r",
+											"pm.test(\"Validate response headers\", function () {\r",
+											"    pm.expect(pm.response.headers.has('Content-Type')).to.be.true;\r",
+											"    pm.expect(pm.response.headers.get('Content-Type')).to.include('application/json');\r",
+											"    pm.expect(pm.response.headers.has('Connection')).to.be.true;\r",
+											"});\r",
+											"const schema = {\r",
+											"  \"type\": \"object\",\r",
+											"  \"properties\": {\r",
+											"    \"userId\": { \"type\": \"integer\" },\r",
+											"    \"userFirstName\": { \"type\": \"string\" },\r",
+											"    \"userLastName\": { \"type\": \"string\" },\r",
+											"    \"userContactNumber\": { \"type\": \"integer\" },\r",
+											"    \"userEmailId\": { \"type\": \"string\" },\r",
+											"    \"creationTime\": { \"type\": \"string\", \"format\": \"date-time\" },\r",
+											"    \"lastModTime\": { \"type\": \"string\", \"format\": \"date-time\" },\r",
+											"    \"userAddress\": {\r",
+											"      \"type\": \"object\",\r",
+											"      \"properties\": {\r",
+											"        \"addressId\": { \"type\": \"integer\" },\r",
+											"        \"plotNumber\": { \"type\": \"string\" },\r",
+											"        \"street\": { \"type\": \"string\" },\r",
+											"        \"state\": { \"type\": \"string\" },\r",
+											"        \"country\": { \"type\": \"string\" },\r",
+											"        \"zipCode\": { \"type\": \"integer\" }\r",
+											"      },\r",
+											"      \"required\": [\"addressId\", \"plotNumber\", \"street\", \"state\", \"country\", \"zipCode\"]\r",
+											"    }\r",
+											"  },\r",
+											"  \"required\": [\r",
+											"    \"userId\",\r",
+											"    \"userFirstName\",\r",
+											"    \"userLastName\",\r",
+											"    \"userContactNumber\",\r",
+											"    \"userEmailId\",\r",
+											"    \"creationTime\",\r",
+											"    \"lastModTime\",\r",
+											"    \"userAddress\"\r",
+											"  ]\r",
+											"};\r",
+											"\r",
+											"\r",
+											"pm.test(\"Validate schema for Get All Users\", function () {\r",
+											"  pm.response.to.have.jsonSchema(schema);\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"id": "3aaa28e9-ce40-4b82-bb75-c393a9ecdb60",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": "{{baseurl}}/uap/users"
+							},
+							"response": []
+						},
+						{
+							"name": "byuserfirstname",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "3716ffcc-6543-4057-b0ef-0667e20111fb",
+										"exec": [
+											"// Check status code\r",
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											"\r",
+											"// Validate response is an array\r",
+											"pm.test(\"Response is an array\", function () {\r",
+											"    const response = pm.response.json();\r",
+											"    pm.expect(response).to.be.an(\"array\");\r",
+											"    pm.expect(response.length).to.be.above(0); // at least 1 user\r",
+											"});\r",
+											"\r",
+											"// Validate schema for each user object in the array\r",
+											"const schema = {\r",
+											"  \"type\": \"object\",\r",
+											"  \"properties\": {\r",
+											"    \"userId\": { \"type\": \"integer\" },\r",
+											"    \"userFirstName\": { \"type\": \"string\" },\r",
+											"    \"userLastName\": { \"type\": \"string\" },\r",
+											"    \"userContactNumber\": { \"type\": \"integer\" },\r",
+											"    \"userEmailId\": { \"type\": \"string\" },\r",
+											"    \"creationTime\": { \"type\": \"string\", \"format\": \"date-time\" },\r",
+											"    \"lastModTime\": { \"type\": \"string\", \"format\": \"date-time\" },\r",
+											"    \"userAddress\": {\r",
+											"      \"type\": \"object\",\r",
+											"      \"properties\": {\r",
+											"        \"addressId\": { \"type\": \"integer\" },\r",
+											"        \"plotNumber\": { \"type\": \"string\" },\r",
+											"        \"street\": { \"type\": \"string\" },\r",
+											"        \"state\": { \"type\": \"string\" },\r",
+											"        \"country\": { \"type\": \"string\" },\r",
+											"        \"zipCode\": { \"type\": \"integer\" }\r",
+											"      },\r",
+											"      \"required\": [\"addressId\", \"plotNumber\", \"street\", \"state\", \"country\", \"zipCode\"]\r",
+											"    }\r",
+											"  },\r",
+											"  \"required\": [\r",
+											"    \"userId\",\r",
+											"    \"userFirstName\",\r",
+											"    \"userLastName\",\r",
+											"    \"userContactNumber\",\r",
+											"    \"userEmailId\",\r",
+											"    \"creationTime\",\r",
+											"    \"lastModTime\",\r",
+											"    \"userAddress\"\r",
+											"  ]\r",
+											"};\r",
+											"\r",
+											"pm.test(\"Validate schema for GET by first name\", function () {\r",
+											"    pm.response.to.have.jsonSchema(schema);\r",
+											"});\r",
+											"\r",
+											"// check first name match\r",
+											"pm.test(\"All returned users have matching first name\", function () {\r",
+											"    const users = pm.response.json();\r",
+											"    users.forEach(user => {\r",
+											"        pm.expect(user.user_first_name.toLowerCase()).to.eql(pm.environment.get(\"userFirstname\").toLowerCase());\r",
+											"    });\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"id": "ec244cdd-c07f-4b76-b49d-2a8dace354e2",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": "{{baseurl}}/{{getendpointbyname}}/{{userFirstName}}"
+							},
+							"response": []
+						},
+						{
+							"name": "Get Non-Existing user",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "26f49e05-9970-48f2-9b45-26b1f1414144",
+										"exec": [
+											"pm.test(\"Status code is 404\",function(){\r",
+											"    pm.response.to.have.status(404);\r",
+											"    console.log(pm.response.code)\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check status line\", function () {\r",
+											"    pm.expect(pm.response.status).to.eql(\"Not Found\"); \r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"id": "bf72b31d-8067-471e-af69-6e430f9174da",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": "{{baseurl}}/{{getuserendpoint}}/0"
+							},
+							"response": []
+						}
+					],
+					"id": "79ae9ab1-03c9-446d-a96f-43a1935664a3",
+					"auth": {
+						"type": "basic",
+						"basic": {
+							"password": "userapi@2025",
+							"username": "Numpy@gmail.com"
+						}
+					},
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"type": "text/javascript",
+								"packages": {},
+								"exec": [
+									""
+								],
+								"id": "ea17942c-a6d6-4405-926e-11cb0fa7dacc"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"packages": {},
+								"exec": [
+									""
+								],
+								"id": "ca5a1d46-5c46-4b7e-9bcd-07d524228f2c"
+							}
+						}
+					]
+				},
+				{
+					"name": "PutUser",
+					"item": [
+						{
+							"name": "UpdateInvalidFirstname",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "5386d478-2843-43cb-bd9d-f9436529c095",
+										"exec": [
+											"pm.test(\"Status code is 400\",function(){\r",
+											"    pm.response.to.have.status(400);\r",
+											"    console.log(pm.response.code)\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check status line\", function () {\r",
+											"    pm.expect(pm.response.status).to.eql(\"Bad Request\"); \r",
+											"});\r",
+											"\r",
+											"pm.test(\"Error message is correct\", function() {\r",
+											"    var jsonData = pm.response.json();\r",
+											"    \r",
+											"    pm.expect(jsonData.message).to.eql(\"User First Name is mandatory and should contains alphabets only\");\r",
+											"});\r",
+											"\r",
+											"\r",
+											"\r",
+											"\r",
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"id": "4ccbecbc-de98-4e5c-9cc0-d38859fa72df",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"userFirstName\": \"{{invalidfirstName}}\",\r\n  \"userLastName\": \"{{lastName}}\",\r\n  \"userContactNumber\": \"{{contactNumber}}\",\r\n  \"userEmailId\": \"{{emailId}}\",\r\n  \"userAddress\": {\r\n    \"plotNumber\": \"{{plotNumber}}\",\r\n    \"street\": \"{{street}}\",\r\n    \"state\": \"{{state}}\",\r\n    \"country\": \"{{country}}\",\r\n    \"zipCode\": {{zipCode}}\r\n  }\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseurl}}/{{updateuser}}/{{userId}}"
+							},
+							"response": []
+						},
+						{
+							"name": "UpdateInvalidLastName",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "4ec53a4c-bb2d-443c-a60b-d9f8d265fd09",
+										"exec": [
+											"pm.test(\"Status code is 400\",function(){\r",
+											"    pm.response.to.have.status(400);\r",
+											"    console.log(pm.response.code)\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check status line\", function () {\r",
+											"    pm.expect(pm.response.status).to.eql(\"Bad Request\"); \r",
+											"});\r",
+											"\r",
+											"pm.test(\"Error message is correct\", function() {\r",
+											"    var jsonData = pm.response.json();\r",
+											"    \r",
+											"    pm.expect(jsonData.message).to.eql(\"User Last Name is mandatory and should contains alphabets only\");\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"id": "62825a00-aeb9-4025-bf96-21557bfd4a49",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"userFirstName\": \"{{firstName}}\",\r\n  \"userLastName\": \"{{invalidlastName}}\",\r\n  \"userContactNumber\": \"{{contactNumber}}\",\r\n  \"userEmailId\": \"{{emailId}}\",\r\n  \"userAddress\": {\r\n    \"plotNumber\": \"{{plotNumber}}\",\r\n    \"street\": \"{{street}}\",\r\n    \"state\": \"{{state}}\",\r\n    \"country\": \"{{country}}\",\r\n    \"zipCode\": {{zipCode}}\r\n  }\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseurl}}/{{updateuser}}/{{userId}}"
+							},
+							"response": []
+						},
+						{
+							"name": "UpdateInvalidContactNumber",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "256fade1-0dd7-42d3-8658-850aace63b87",
+										"exec": [
+											"pm.test(\"Status code is 400\",function(){\r",
+											"    pm.response.to.have.status(400);\r",
+											"    console.log(pm.response.code)\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check status line\", function () {\r",
+											"    pm.expect(pm.response.status).to.eql(\"Bad Request\"); \r",
+											"});\r",
+											"\r",
+											"pm.test(\"Error message is correct\", function() {\r",
+											"    var jsonData = pm.response.json();\r",
+											"    \r",
+											"    pm.expect(jsonData.message).to.eql(\"Phone Number is required and should contains 10 numeric values only\");\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"id": "2d4b9f53-44b2-47e9-b32e-27b80ca7329a",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"userFirstName\": \"{{firstName}}\",\r\n  \"userLastName\": \"{{lastName}}\",\r\n  \"userContactNumber\": \"{{invalidcontactNumber}}\",\r\n  \"userEmailId\": \"{{emailId}}\",\r\n  \"userAddress\": {\r\n    \"plotNumber\": \"{{plotNumber}}\",\r\n    \"street\": \"{{street}}\",\r\n    \"state\": \"{{state}}\",\r\n    \"country\": \"{{country}}\",\r\n    \"zipCode\": {{zipCode}}\r\n  }\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseurl}}/{{updateuser}}/{{userId}}"
+							},
+							"response": []
+						},
+						{
+							"name": "UpdateInvalidEmailId",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "a98589fc-3873-4a6a-b77e-6ecf46c9ec30",
+										"exec": [
+											"pm.test(\"Status code is 400\",function(){\r",
+											"    pm.response.to.have.status(400);\r",
+											"    console.log(pm.response.code)\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check status line\", function () {\r",
+											"    pm.expect(pm.response.status).to.eql(\"Bad Request\"); \r",
+											"});\r",
+											"\r",
+											"pm.test(\"Error message is correct\", function() {\r",
+											"    var jsonData = pm.response.json();\r",
+											"    \r",
+											"    pm.expect(jsonData.message).to.eql(\"User email Id is required\");\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"id": "aaa60a6c-01e8-43df-a577-78483732d0ef",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"userFirstName\": \"{{firstName}}\",\r\n  \"userLastName\": \"{{lastName}}\",\r\n  \"userContactNumber\": \"{{contactNumber}}\",\r\n  \"userEmailId\": \"{{invalidemailId}}\",\r\n  \"userAddress\": {\r\n    \"plotNumber\": \"{{plotNumber}}\",\r\n    \"street\": \"{{street}}\",\r\n    \"state\": \"{{state}}\",\r\n    \"country\": \"{{country}}\",\r\n    \"zipCode\": {{zipCode}}\r\n  }\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseurl}}/{{updateuser}}/{{userId}}"
+							},
+							"response": []
+						},
+						{
+							"name": "UpdateInvalidPlotNumber",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "99ab84a6-e6b6-45f2-bf49-78c3b2e14656",
+										"exec": [
+											"pm.test(\"Status code is 400\",function(){\r",
+											"    pm.response.to.have.status(400);\r",
+											"    console.log(pm.response.code)\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check status line\", function () {\r",
+											"    pm.expect(pm.response.status).to.eql(\"Bad Request\"); \r",
+											"});\r",
+											"\r",
+											"pm.test(\"Error message is correct\", function() {\r",
+											"    var jsonData = pm.response.json();\r",
+											"    \r",
+											"    pm.expect(jsonData.message).to.eql(\"Plot number should contain alphaNumeric values only\");\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"id": "cc999216-1dbf-4474-9bf7-7206c8bf2197",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"userFirstName\": \"{{firstName}}\",\r\n  \"userLastName\": \"{{lastName}}\",\r\n  \"userContactNumber\": \"{{contactNumber}}\",\r\n  \"userEmailId\": \"{{emailId}}\",\r\n  \"userAddress\": {\r\n    \"plotNumber\": \"{{invalidplotNumber}}\",\r\n    \"street\": \"{{street}}\",\r\n    \"state\": \"{{state}}\",\r\n    \"country\": \"{{country}}\",\r\n    \"zipCode\": {{zipCode}}\r\n  }\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseurl}}/{{updateuser}}/{{userId}}"
+							},
+							"response": []
+						},
+						{
+							"name": "UpdateInvalidStreet",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "aecf5f27-0fe0-4888-b63a-b5c8ea20d5c6",
+										"exec": [
+											"pm.test(\"Status code is 400\",function(){\r",
+											"    pm.response.to.have.status(400);\r",
+											"    console.log(pm.response.code)\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check status line\", function () {\r",
+											"    pm.expect(pm.response.status).to.eql(\"Bad Request\"); \r",
+											"});\r",
+											"\r",
+											"pm.test(\"Error message is correct\", function() {\r",
+											"    var jsonData = pm.response.json();\r",
+											"    \r",
+											"    pm.expect(jsonData.message).to.eql(\"Street should contain alphabet characters only\");\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"id": "4f698e28-527c-4005-8cdd-3bb4c877ecb1",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"userFirstName\": \"{{firstName}}\",\r\n  \"userLastName\": \"{{lastName}}\",\r\n  \"userContactNumber\": \"{{contactNumber}}\",\r\n  \"userEmailId\": \"{{emailId}}\",\r\n  \"userAddress\": {\r\n    \"plotNumber\": \"{{plotNumber}}\",\r\n    \"street\": \"{{invalidstreet}}\",\r\n    \"state\": \"{{state}}\",\r\n    \"country\": \"{{country}}\",\r\n    \"zipCode\": {{zipCode}}\r\n  }\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseurl}}/{{updateuser}}/{{userId}}"
+							},
+							"response": []
+						},
+						{
+							"name": "UpdateInvalidState",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "f2069999-4667-4c77-8fa0-223d4003e642",
+										"exec": [
+											"pm.test(\"Status code is 400\",function(){\r",
+											"    pm.response.to.have.status(400);\r",
+											"    console.log(pm.response.code)\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check status line\", function () {\r",
+											"    pm.expect(pm.response.status).to.eql(\"Bad Request\"); \r",
+											"});\r",
+											"\r",
+											"pm.test(\"Error message is correct\", function() {\r",
+											"    var jsonData = pm.response.json();\r",
+											"    \r",
+											"    pm.expect(jsonData.message).to.eql(\"State should contain alphabet characters only\");\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"id": "a5529c42-cb7b-4c88-bc73-fd4594ec156d",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"userFirstName\": \"{{firstName}}\",\r\n  \"userLastName\": \"{{lastName}}\",\r\n  \"userContactNumber\": \"{{contactNumber}}\",\r\n  \"userEmailId\": \"{{emailId}}\",\r\n  \"userAddress\": {\r\n    \"plotNumber\": \"{{plotNumber}}\",\r\n    \"street\": \"{{street}}\",\r\n    \"state\": \"{{invalidstate}}\",\r\n    \"country\": \"{{country}}\",\r\n    \"zipCode\": {{zipCode}}\r\n  }\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseurl}}/{{updateuser}}/{{userId}}"
+							},
+							"response": []
+						},
+						{
+							"name": "UpdateInvalidCountry",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "cd59ba54-0c90-44e5-82b2-9f827de88dba",
+										"exec": [
+											"pm.test(\"Status code is 400\",function(){\r",
+											"    pm.response.to.have.status(400);\r",
+											"    console.log(pm.response.code)\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check status line\", function () {\r",
+											"    pm.expect(pm.response.status).to.eql(\"Bad Request\"); \r",
+											"});\r",
+											"\r",
+											"pm.test(\"Error message is correct\", function() {\r",
+											"    var jsonData = pm.response.json();\r",
+											"    \r",
+											"    pm.expect(jsonData.message).to.eql(\"Country should contain alphabet characters only\");\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"id": "92340a7b-ab00-473e-98c9-0f7d20551610",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"userFirstName\": \"{{firstName}}\",\r\n  \"userLastName\": \"{{lastName}}\",\r\n  \"userContactNumber\": \"{{contactNumber}}\",\r\n  \"userEmailId\": \"{{emailId}}\",\r\n  \"userAddress\": {\r\n    \"plotNumber\": \"{{plotNumber}}\",\r\n    \"street\": \"{{street}}\",\r\n    \"state\": \"{{state}}\",\r\n    \"country\": \"{{invalidcountry}}\",\r\n    \"zipCode\": {{zipCode}}\r\n  }\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseurl}}/{{updateuser}}/{{userId}}"
+							},
+							"response": []
+						},
+						{
+							"name": "UpdateINvalidZipcode",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "0d664eda-dba3-4d1a-8ddf-4027daf6b345",
+										"exec": [
+											"pm.test(\"Status code is 400\",function(){\r",
+											"    pm.response.to.have.status(400);\r",
+											"    console.log(pm.response.code)\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check status line\", function () {\r",
+											"    pm.expect(pm.response.status).to.eql(\"Bad Request\"); \r",
+											"});\r",
+											"\r",
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"id": "07e30f9f-1a06-4980-813c-760bf59ec1d1",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"userFirstName\": \"{{firstName}}\",\r\n  \"userLastName\": \"{{lastName}}\",\r\n  \"userContactNumber\": \"{{contactNumber}}\",\r\n  \"userEmailId\": \"{{emailId}}\",\r\n  \"userAddress\": {\r\n    \"plotNumber\": \"{{plotNumber}}\",\r\n    \"street\": \"{{street}}\",\r\n    \"state\": \"{{state}}\",\r\n    \"country\": \"{{country}}\",\r\n    \"zipCode\": \"{{invalidzipCode}}\"\r\n  }\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseurl}}/{{updateuser}}/{{userId}}"
+							},
+							"response": []
+						},
+						{
+							"name": "UpdateValidFirstname",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "8e6d6a8c-687d-4d71-989c-dc88f6895a89",
+										"exec": [
+											"pm.test(\"Status code is 200\",function(){\r",
+											"    pm.response.to.have.status(200);\r",
+											"    console.log(pm.response.code)\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check status line\", function () {\r",
+											"    pm.expect(pm.response.status).to.eql(\"OK\"); \r",
+											"});\r",
+											"\r",
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"id": "dd2570ce-6be9-4fdd-a252-89bddfde69c0",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"userFirstName\": \"henryie\",\r\n  \"userLastName\": \"{{lastName}}\",\r\n  \"userContactNumber\": \"{{contactNumber}}\",\r\n  \"userEmailId\": \"{{emailId}}\",\r\n  \"userAddress\": {\r\n    \"plotNumber\": \"{{plotNumber}}\",\r\n    \"street\": \"{{street}}\",\r\n    \"state\": \"{{state}}\",\r\n    \"country\": \"{{country}}\",\r\n    \"zipCode\": {{zipCode}}\r\n  }\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseurl}}/{{updateuser}}/{{userId}}"
+							},
+							"response": []
+						},
+						{
+							"name": "UpdateValidLastname",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "14faeed6-414d-41b6-91a3-6ee2101e23a6",
+										"exec": [
+											"pm.test(\"Status code is 200\",function(){\r",
+											"    pm.response.to.have.status(200);\r",
+											"    console.log(pm.response.code)\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check status line\", function () {\r",
+											"    pm.expect(pm.response.status).to.eql(\"OK\"); \r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"id": "54608387-87d6-4654-9503-ca553f8dcf76",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"userFirstName\": \"{{firstName}}\",\r\n  \"userLastName\": \"bobjh\",\r\n  \"userContactNumber\": \"{{contactNumber}}\",\r\n  \"userEmailId\": \"{{emailId}}\",\r\n  \"userAddress\": {\r\n    \"plotNumber\": \"{{plotNumber}}\",\r\n    \"street\": \"{{street}}\",\r\n    \"state\": \"{{state}}\",\r\n    \"country\": \"{{country}}\",\r\n    \"zipCode\": {{zipCode}}\r\n  }\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseurl}}/{{updateuser}}/{{userId}}"
+							},
+							"response": []
+						},
+						{
+							"name": "UpdateValidEmailid",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "4bc91758-69f6-4385-ada2-24ed4659adf8",
+										"exec": [
+											"pm.test(\"Status code is 200\",function(){\r",
+											"    pm.response.to.have.status(200);\r",
+											"    console.log(pm.response.code)\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check status line\", function () {\r",
+											"    pm.expect(pm.response.status).to.eql(\"OK\"); \r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"id": "c1a23112-90fe-4b0d-aff6-92351bc34f47",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"userFirstName\": \"{{firstName}}\",\r\n  \"userLastName\": \"{{lastName}}\",\r\n  \"userContactNumber\": \"{{contactNumber}}\",\r\n  \"userEmailId\": \"numrisenaz@gmail.com\",\r\n  \"userAddress\": {\r\n    \"plotNumber\": \"{{plotNumber}}\",\r\n    \"street\": \"{{street}}\",\r\n    \"state\": \"{{state}}\",\r\n    \"country\": \"{{country}}\",\r\n    \"zipCode\": {{zipCode}}\r\n  }\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseurl}}/{{updateuser}}/{{userId}}"
+							},
+							"response": []
+						},
+						{
+							"name": "UpdateValidContactNumber",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "10dceec7-37e6-4c03-9d30-631fa533d1c3",
+										"exec": [
+											"pm.test(\"Status code is 200\",function(){\r",
+											"    pm.response.to.have.status(200);\r",
+											"    console.log(pm.response.code)\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check status line\", function () {\r",
+											"    pm.expect(pm.response.status).to.eql(\"OK\"); \r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"id": "8bcf857e-a063-4bc1-9cc4-867b2b102765",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"userFirstName\": \"{{firstName}}\",\r\n  \"userLastName\": \"{{lastName}}\",\r\n  \"userContactNumber\": \"4562893172\",\r\n  \"userEmailId\": \"{{emailId}}\",\r\n  \"userAddress\": {\r\n    \"plotNumber\": \"{{plotNumber}}\",\r\n    \"street\": \"{{street}}\",\r\n    \"state\": \"{{state}}\",\r\n    \"country\": \"{{country}}\",\r\n    \"zipCode\": {{zipCode}}\r\n  }\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseurl}}/{{updateuser}}/{{userId}}"
+							},
+							"response": []
+						},
+						{
+							"name": "UpdateValidPLotNumber",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "1f89cd10-2e1c-4cb3-a892-ad668181a933",
+										"exec": [
+											"pm.test(\"Status code is 200\",function(){\r",
+											"    pm.response.to.have.status(200);\r",
+											"    console.log(pm.response.code)\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check status line\", function () {\r",
+											"    pm.expect(pm.response.status).to.eql(\"OK\"); \r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"id": "431839b2-2974-4eba-81a2-4064e281e3f2",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"userFirstName\": \"{{firstName}}\",\r\n  \"userLastName\": \"{{lastName}}\",\r\n  \"userContactNumber\": \"{{contactNumber}}\",\r\n  \"userEmailId\": \"{{emailId}}\",\r\n  \"userAddress\": {\r\n    \"plotNumber\": \"rr-89\",\r\n    \"street\": \"{{street}}\",\r\n    \"state\": \"{{state}}\",\r\n    \"country\": \"{{country}}\",\r\n    \"zipCode\": {{zipCode}}\r\n  }\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseurl}}/{{updateuser}}/{{userId}}"
+							},
+							"response": []
+						},
+						{
+							"name": "UpdateValidStreet",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "c595fc84-4a3b-4b9d-baf8-8d31c39daf01",
+										"exec": [
+											"pm.test(\"Status code is 200\",function(){\r",
+											"    pm.response.to.have.status(200);\r",
+											"    console.log(pm.response.code)\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check status line\", function () {\r",
+											"    pm.expect(pm.response.status).to.eql(\"OK\"); \r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"id": "8fd121f5-b825-4485-9108-b053253a6d8a",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"userFirstName\": \"{{firstName}}\",\r\n  \"userLastName\": \"{{lastName}}\",\r\n  \"userContactNumber\": \"{{contactNumber}}\",\r\n  \"userEmailId\": \"{{emailId}}\",\r\n  \"userAddress\": {\r\n    \"plotNumber\": \"{{plotNumber}}\",\r\n    \"street\": \"East\",\r\n    \"state\": \"{{state}}\",\r\n    \"country\": \"{{country}}\",\r\n    \"zipCode\": {{zipCode}}\r\n  }\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseurl}}/{{updateuser}}/{{userId}}"
+							},
+							"response": []
+						},
+						{
+							"name": "UpdateValidState",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "f5bfd186-fe50-4bc1-aebc-02db90853e0a",
+										"exec": [
+											"pm.test(\"Status code is 200\",function(){\r",
+											"    pm.response.to.have.status(200);\r",
+											"    console.log(pm.response.code)\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check status line\", function () {\r",
+											"    pm.expect(pm.response.status).to.eql(\"OK\"); \r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"id": "e0e5d6a1-7fbb-42db-b028-c54e09d30bfe",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"userFirstName\": \"{{firstName}}\",\r\n  \"userLastName\": \"{{lastName}}\",\r\n  \"userContactNumber\": \"{{contactNumber}}\",\r\n  \"userEmailId\": \"{{emailId}}\",\r\n  \"userAddress\": {\r\n    \"plotNumber\": \"{{plotNumber}}\",\r\n    \"street\": \"{{street}}\",\r\n    \"state\": \"VA\",\r\n    \"country\": \"{{country}}\",\r\n    \"zipCode\": {{zipCode}}\r\n  }\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseurl}}/{{updateuser}}/{{userId}}"
+							},
+							"response": []
+						},
+						{
+							"name": "UpdateValidCountry",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "a854ecdb-16fc-4c32-8403-d44221d7c41a",
+										"exec": [
+											"pm.test(\"Status code is 200\",function(){\r",
+											"    pm.response.to.have.status(200);\r",
+											"    console.log(pm.response.code)\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check status line\", function () {\r",
+											"    pm.expect(pm.response.status).to.eql(\"OK\"); \r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"id": "fff57ade-af92-4cdd-8876-20d4b9ef6545",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"userFirstName\": \"{{firstName}}\",\r\n  \"userLastName\": \"{{lastName}}\",\r\n  \"userContactNumber\": \"{{contactNumber}}\",\r\n  \"userEmailId\": \"{{emailId}}\",\r\n  \"userAddress\": {\r\n    \"plotNumber\": \"{{plotNumber}}\",\r\n    \"street\": \"{{street}}\",\r\n    \"state\": \"{{state}}\",\r\n    \"country\": \"africa\",\r\n    \"zipCode\": {{zipCode}}\r\n  }\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseurl}}/{{updateuser}}/{{userId}}"
+							},
+							"response": []
+						},
+						{
+							"name": "UpdateValidZipcode",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "bb47ab02-2cfc-46f4-b497-ab7a8d632939",
+										"exec": [
+											"pm.test(\"Status code is 200\",function(){\r",
+											"    pm.response.to.have.status(200);\r",
+											"    console.log(pm.response.code)\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check status line\", function () {\r",
+											"    pm.expect(pm.response.status).to.eql(\"OK\"); \r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"id": "e0ee6f7b-4f1c-4858-852a-b5a8a2a179ef",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"userFirstName\": \"{{firstName}}\",\r\n  \"userLastName\": \"{{lastName}}\",\r\n  \"userContactNumber\": \"{{contactNumber}}\",\r\n  \"userEmailId\": \"{{emailId}}\",\r\n  \"userAddress\": {\r\n    \"plotNumber\": \"{{plotNumber}}\",\r\n    \"street\": \"{{street}}\",\r\n    \"state\": \"{{state}}\",\r\n    \"country\": \"{{country}}\",\r\n    \"zipCode\": 60532\r\n  }\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseurl}}/{{updateuser}}/{{userId}}"
+							},
+							"response": []
+						},
+						{
+							"name": "UpdateFirstnametoBlankSpace",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "b1e1f106-5510-41b8-9e5f-3fe40106b824",
+										"exec": [
+											"pm.test(\"Status code is 400\",function(){\r",
+											"    pm.response.to.have.status(400);\r",
+											"    console.log(pm.response.code)\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check status line\", function () {\r",
+											"    pm.expect(pm.response.status).to.eql(\"Bad Request\"); \r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"id": "6d335c18-c214-4822-bdfc-5a07ac77e427",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"userFirstName\": \" \",\r\n  \"userLastName\": \"{{lastName}}\",\r\n  \"userContactNumber\": \"{{contactNumber}}\",\r\n  \"userEmailId\": \"{{emailId}}\",\r\n  \"userAddress\": {\r\n    \"plotNumber\": \"{{plotNumber}}\",\r\n    \"street\": \"{{street}}\",\r\n    \"state\": \"{{state}}\",\r\n    \"country\": \"{{country}}\",\r\n    \"zipCode\": {{zipCode}}\r\n  }\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseurl}}/{{updateuser}}/{{userId}}"
+							},
+							"response": []
+						},
+						{
+							"name": "UpdatelastnametoBlankSpace",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "307702cf-a5dd-4037-87a7-6c1f039b1721",
+										"exec": [
+											"pm.test(\"Status code is 400\",function(){\r",
+											"    pm.response.to.have.status(400);\r",
+											"    console.log(pm.response.code)\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check status line\", function () {\r",
+											"    pm.expect(pm.response.status).to.eql(\"Bad Request\"); \r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"id": "511f6a02-c44e-4cce-a288-2a51aced2c76",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"userFirstName\": \"{{firstName}}\",\r\n  \"userLastName\": \" \",\r\n  \"userContactNumber\": \"{{contactNumber}}\",\r\n  \"userEmailId\": \"{{emailId}}\",\r\n  \"userAddress\": {\r\n    \"plotNumber\": \"{{plotNumber}}\",\r\n    \"street\": \"{{street}}\",\r\n    \"state\": \"{{state}}\",\r\n    \"country\": \"{{country}}\",\r\n    \"zipCode\": {{zipCode}}\r\n  }\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseurl}}/{{updateuser}}/{{userId}}"
+							},
+							"response": []
+						},
+						{
+							"name": "UpdateContactNumbertoBlankSpace",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "9d26a7fb-9a55-4d0c-9daf-f8e4b65c2838",
+										"exec": [
+											"pm.test(\"Status code is 400\",function(){\r",
+											"    pm.response.to.have.status(400);\r",
+											"    console.log(pm.response.code)\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check status line\", function () {\r",
+											"    pm.expect(pm.response.status).to.eql(\"Bad Request\"); \r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"id": "07d06e2d-f58a-40fd-8d1c-2febf7877483",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"userFirstName\": \"{{firstName}}\",\r\n  \"userLastName\": \"{{lastName}}\",\r\n  \"userContactNumber\": \" \",\r\n  \"userEmailId\": \"{{emailId}}\",\r\n  \"userAddress\": {\r\n    \"plotNumber\": \"{{plotNumber}}\",\r\n    \"street\": \"{{street}}\",\r\n    \"state\": \"{{state}}\",\r\n    \"country\": \"{{country}}\",\r\n    \"zipCode\": {{zipCode}}\r\n  }\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseurl}}/{{updateuser}}/{{userId}}"
+							},
+							"response": []
+						},
+						{
+							"name": "UpdateemailidtoBlankSpace",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "c54bb2c2-93a5-4fc1-b81a-ca1866b15df8",
+										"exec": [
+											"pm.test(\"Status code is 400\",function(){\r",
+											"    pm.response.to.have.status(400);\r",
+											"    console.log(pm.response.code)\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check status line\", function () {\r",
+											"    pm.expect(pm.response.status).to.eql(\"Bad Request\"); \r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"id": "40a01a06-b93d-4a39-aa40-739e29209eae",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"userFirstName\": \"{{firstName}}\",\r\n  \"userLastName\": \"{{lastName}}\",\r\n  \"userContactNumber\": \"{{contactNumber}}\",\r\n  \"userEmailId\": \" \",\r\n  \"userAddress\": {\r\n    \"plotNumber\": \"{{plotNumber}}\",\r\n    \"street\": \"{{street}}\",\r\n    \"state\": \"{{state}}\",\r\n    \"country\": \"{{country}}\",\r\n    \"zipCode\": {{zipCode}}\r\n  }\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseurl}}/{{updateuser}}/{{userId}}"
+							},
+							"response": []
+						},
+						{
+							"name": "UpdateplotnumbertoBlankSpace",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "91d1680a-50cc-4ff0-9e0d-1fffe2629518",
+										"exec": [
+											"pm.test(\"Status code is 400\",function(){\r",
+											"    pm.response.to.have.status(400);\r",
+											"    console.log(pm.response.code)\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check status line\", function () {\r",
+											"    pm.expect(pm.response.status).to.eql(\"Bad Request\"); \r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"id": "d470dfb7-1460-4b54-859a-a16e98d8f6c4",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"userFirstName\": \"{{firstName}}\",\r\n  \"userLastName\": \"{{lastName}}\",\r\n  \"userContactNumber\": \"{{contactNumber}}\",\r\n  \"userEmailId\": \"{{emailId}}\",\r\n  \"userAddress\": {\r\n    \"plotNumber\": \" \",\r\n    \"street\": \"{{street}}\",\r\n    \"state\": \"{{state}}\",\r\n    \"country\": \"{{country}}\",\r\n    \"zipCode\": {{zipCode}}\r\n  }\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseurl}}/{{updateuser}}/{{userId}}"
+							},
+							"response": []
+						},
+						{
+							"name": "UpdatestreettoBlankSpace",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "c2aebc58-6b6c-4d26-9643-32f6266c1fa1",
+										"exec": [
+											"pm.test(\"Status code is 400\",function(){\r",
+											"    pm.response.to.have.status(400);\r",
+											"    console.log(pm.response.code)\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check status line\", function () {\r",
+											"    pm.expect(pm.response.status).to.eql(\"Bad Request\"); \r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"id": "a77e31c4-ecfa-45c0-8613-c0f9f606b52d",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"userFirstName\": \"{{firstName}}\",\r\n  \"userLastName\": \"{{lastName}}\",\r\n  \"userContactNumber\": \"{{contactNumber}}\",\r\n  \"userEmailId\": \"{{emailId}}\",\r\n  \"userAddress\": {\r\n    \"plotNumber\": \"{{plotNumber}}\",\r\n    \"street\": \" \",\r\n    \"state\": \"{{state}}\",\r\n    \"country\": \"{{country}}\",\r\n    \"zipCode\": {{zipCode}}\r\n  }\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseurl}}/{{updateuser}}/{{userId}}"
+							},
+							"response": []
+						},
+						{
+							"name": "UpdatestatetoBlankSpace",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "0d260a18-0bd5-4e34-ac07-54a2a8f08760",
+										"exec": [
+											"pm.test(\"Status code is 400\",function(){\r",
+											"    pm.response.to.have.status(400);\r",
+											"    console.log(pm.response.code)\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check status line\", function () {\r",
+											"    pm.expect(pm.response.status).to.eql(\"Bad Request\"); \r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"id": "0adeb7b8-2e95-4af4-8179-949d2b13a179",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"userFirstName\": \"{{firstName}}\",\r\n  \"userLastName\": \"{{lastName}}\",\r\n  \"userContactNumber\": \"{{contactNumber}}\",\r\n  \"userEmailId\": \"{{emailId}}\",\r\n  \"userAddress\": {\r\n    \"plotNumber\": \"{{plotNumber}}\",\r\n    \"street\": \"{{street}}\",\r\n    \"state\": \" \",\r\n    \"country\": \"{{country}}\",\r\n    \"zipCode\": {{zipCode}}\r\n  }\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseurl}}/{{updateuser}}/{{userId}}"
+							},
+							"response": []
+						},
+						{
+							"name": "UpdateCountrytoBlankSpace",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "1636e032-1fe7-4344-b7d8-ab6ee4630107",
+										"exec": [
+											"pm.test(\"Status code is 400\",function(){\r",
+											"    pm.response.to.have.status(400);\r",
+											"    console.log(pm.response.code)\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check status line\", function () {\r",
+											"    pm.expect(pm.response.status).to.eql(\"Bad Request\"); \r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"id": "e6850980-a7fc-48e5-bbc6-42e7fc7f97df",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"userFirstName\": \"{{firstName}}\",\r\n  \"userLastName\": \"{{lastName}}\",\r\n  \"userContactNumber\": \"{{contactNumber}}\",\r\n  \"userEmailId\": \"{{emailId}}\",\r\n  \"userAddress\": {\r\n    \"plotNumber\": \"{{plotNumber}}\",\r\n    \"street\": \"{{street}}\",\r\n    \"state\": \"{{state}}\",\r\n    \"country\": \" \",\r\n    \"zipCode\": {{zipCode}}\r\n  }\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseurl}}/{{updateuser}}/{{userId}}"
+							},
+							"response": []
+						},
+						{
+							"name": "UpdateZipCodetoBlankSpace",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "908663b1-004c-4bea-9dc8-3c3244e4e426",
+										"exec": [
+											"pm.test(\"Status code is 400\",function(){\r",
+											"    pm.response.to.have.status(400);\r",
+											"    console.log(pm.response.code)\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check status line\", function () {\r",
+											"    pm.expect(pm.response.status).to.eql(\"Bad Request\"); \r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"id": "e466ee2e-e8f7-4676-85a4-3844c8c57df2",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"userFirstName\": \"{{firstName}}\",\r\n  \"userLastName\": \"{{lastName}}\",\r\n  \"userContactNumber\": \"{{contactNumber}}\",\r\n  \"userEmailId\": \"{{emailId}}\",\r\n  \"userAddress\": {\r\n    \"plotNumber\": \"{{plotNumber}}\",\r\n    \"street\": \"{{street}}\",\r\n    \"state\": \"{{state}}\",\r\n    \"country\": \"{{country}}\",\r\n    \"zipCode\":\" \"\r\n  }\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseurl}}/{{updateuser}}/{{userId}}"
+							},
+							"response": []
+						},
+						{
+							"name": "UpdateExistingEmailId",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "5f46fa86-f470-42e6-afc9-58a2bf2b32e3",
+										"exec": [
+											"pm.test(\"Status code is 409\",function(){\r",
+											"    pm.response.to.have.status(409);\r",
+											"    console.log(pm.response.code)\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check status line\", function () {\r",
+											"    pm.expect(pm.response.status).to.eql(\"conflicts\"); \r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"id": "bcbb3634-0bc4-44ff-b655-f3f1b9177232",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"userFirstName\": \"{{firstName}}\",\r\n  \"userLastName\": \"{{lastName}}\",\r\n  \"userContactNumber\": \"{{contactNumber}}\",\r\n  \"userEmailId\": \"Numpy@gmail.com\",\r\n  \"userAddress\": {\r\n    \"plotNumber\": \"{{plotNumber}}\",\r\n    \"street\": \"{{street}}\",\r\n    \"state\": \"{{state}}\",\r\n    \"country\": \"{{country}}\",\r\n    \"zipCode\": {{zipCode}}\r\n  }\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseurl}}/{{updateuser}}/{{userId}}"
+							},
+							"response": []
+						},
+						{
+							"name": "UpdateExistingContactNumber",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "2b54b26a-33d8-412e-a578-643896078e4e",
+										"exec": [
+											"pm.test(\"Status code is 409\",function(){\r",
+											"    pm.response.to.have.status(409);\r",
+											"    console.log(pm.response.code)\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check status line\", function () {\r",
+											"    pm.expect(pm.response.status).to.eql(\"conflicts\"); \r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"id": "7f045709-d0b4-4198-9209-e5940ab79a59",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"userFirstName\": \"{{firstName}}\",\r\n  \"userLastName\": \"{{lastName}}\",\r\n  \"userContactNumber\": \"1234567891\",\r\n  \"userEmailId\": \"{{emailId}}\",\r\n  \"userAddress\": {\r\n    \"plotNumber\": \"{{plotNumber}}\",\r\n    \"street\": \"{{street}}\",\r\n    \"state\": \"{{state}}\",\r\n    \"country\": \"{{country}}\",\r\n    \"zipCode\": {{zipCode}}\r\n  }\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseurl}}/{{updateuser}}/{{userId}}"
+							},
+							"response": []
+						}
+					],
+					"id": "12220e3a-e85d-4712-9003-7a2952744abb",
+					"auth": {
+						"type": "basic",
+						"basic": {
+							"password": "userapi@2025",
+							"username": "Numpy@gmail.com"
+						}
+					},
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"type": "text/javascript",
+								"packages": {},
+								"exec": [
+									""
+								],
+								"id": "c568919b-594b-4d3d-8f2f-b0169bfe83d8"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"packages": {},
+								"exec": [
+									""
+								],
+								"id": "f98fd582-5d8a-46d8-b873-1e2d6369c7ae"
+							}
+						}
+					]
+				},
+				{
+					"name": "Patch User",
+					"item": [
+						{
+							"name": "Update UserEmail",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "f65254ec-f796-4136-b48a-eea3ce7bc86b",
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											"\r",
+											"//Validate Response Contains Updated Email\r",
+											"pm.test(\"Validate updated email in response body\", function () {\r",
+											"    const res = pm.response.json();\r",
+											"    pm.expect(res.data.userEmailId).to.eql(pm.environment.get(\"updatedEmail\"));\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"id": "1038250a-0427-42e2-986c-a663ed55121b",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"userEmailId\": \"{{updatedEmail}}\"\r\n  \r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseurl}}/uap/updateuserfields/{{userId}}\n"
+							},
+							"response": []
+						},
+						{
+							"name": "New Request",
+							"id": "6b0518e3-6087-403a-8e0e-81b13eb11c6d",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": []
+							},
+							"response": []
+						}
+					],
+					"id": "5381538f-022b-4973-95cc-28a1ce2d1177"
+				},
+				{
+					"name": "DeleteUser",
+					"item": [
+						{
+							"name": "Delete user by user first name",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "88370838-98f2-46ba-a7cc-169ff2b9acfe",
+										"exec": [
+											"pm.test(\"Status code is 200\",function(){\r",
+											"    pm.response.to.have.status(200);\r",
+											"    console.log(pm.response.code)\r",
+											"});\r",
+											"\r",
+											"\r",
+											"pm.test(\"Check for successful response message\", function () {\r",
+											"    pm.expect(pm.response.status).to.eql(\"OK\"); \r",
+											"});\r",
+											"// Unset environment variables used in chaining\r",
+											"pm.environment.unset(\"userFirstname\");\r",
+											"\r",
+											"//  confirm in console\r",
+											"console.log(\"Environment variables cleared: userId, userFirstname\");\r",
+											"\r",
+											"\r",
+											"//User Successfully Deleted Validation\r",
+											"pm.test(\"Response message confirms deletion\", function () {\r",
+											"    const res = pm.response.json();\r",
+											"    pm.expect(res.message).to.include(\"User is deleted successfully\");\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"id": "0209e3cc-5ae5-4e20-83b8-17a5f7900f1f",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": "{{baseurl}}{{deleteuser}}/username/{{userFirstName}}"
+							},
+							"response": []
+						},
+						{
+							"name": "Delete user by user id",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "ea348cf4-ed8e-4b2f-8d40-be3cc8e1bfa8",
+										"exec": [
+											"pm.test(\"Status code is 200\",function(){\r",
+											"    pm.response.to.have.status(200);\r",
+											"    console.log(pm.response.code)\r",
+											"});\r",
+											"\r",
+											"\r",
+											"pm.test(\"Check for successful response message\", function () {\r",
+											"    pm.expect(pm.response.status).to.eql(\"OK\"); \r",
+											"\r",
+											"    // Unset environment variables used in chaining\r",
+											"pm.environment.unset(\"userId\");\r",
+											"\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"id": "b7a30f67-5266-4cfb-baac-1dd0c89d9cdb",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": "{{baseurl}}/{{deleteuser}}/{{userId}}"
+							},
+							"response": []
+						},
+						{
+							"name": "Delete non existing user",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 404\",function(){\r",
+											"    pm.response.to.have.status(404);\r",
+											"    console.log(pm.response.code)\r",
+											"});\r",
+											"\r",
+											"\r",
+											"pm.test(\"Check for successful response message\", function () {\r",
+											"    pm.expect(pm.response.status).to.eql(\"Not Found\"); \r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript",
+										"packages": {},
+										"id": "2f0e858f-69ff-4215-a764-54d3acc6dd9e"
+									}
+								}
+							],
+							"id": "c0386537-6e56-4d31-8e27-332620aa7ab2",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": "{{baseurl}}/deleteuser/0"
+							},
+							"response": []
+						}
+					],
+					"id": "eb952379-c6df-41a8-8c8a-29963c8ac3c3"
+				}
+			],
+			"id": "8b4a20d5-5872-4bf3-a0f4-c6495b86650e",
+			"auth": {
+				"type": "basic",
+				"basic": {
+					"password": "userapi@2025",
+					"username": "Numpy@gmail.com"
+				}
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"packages": {},
+						"exec": [
+							""
+						],
+						"id": "282ada69-71c6-4d6e-bfbc-fb21ca22f185"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"packages": {},
+						"exec": [
+							""
+						],
+						"id": "2078384d-ab7c-4ad8-a5e8-1f7fa32538a3"
+					}
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "basic",
+		"basic": {
+			"password": "userapi@2025",
+			"username": "Numpy@gmail.com"
+		}
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "4e165adb-ef5e-4cee-8341-964453ee0750",
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "c08d3514-2724-4734-80cf-eeaa67c2f52b",
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseurl",
+			"value": "https://userserviceapp-f5a54828541b.herokuapp.com",
+			"type": "string"
+		},
+		{
+			"key": "getendpointbyname",
+			"value": "uap/users/username",
+			"type": "string"
+		},
+		{
+			"key": "user",
+			"value": "uap/user",
+			"type": "string"
+		},
+		{
+			"key": "getuserendpoint",
+			"value": "uap/users",
+			"type": "string"
+		},
+		{
+			"key": "userId",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "postendpoint",
+			"value": "uap/createusers",
+			"type": "string"
+		},
+		{
+			"key": "updateuser",
+			"value": "uap/updateuser",
+			"type": "string"
+		},
+		{
+			"value": ""
+		},
+		{
+			"key": "userid",
+			"value": ""
+		},
+		{
+			"key": "userFirstName",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "deleteuser",
+			"value": "deleteuser",
+			"type": "string"
+		}
+	]
+}
