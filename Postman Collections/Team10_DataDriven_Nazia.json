@@ -521,7 +521,7 @@
 					"auth": {
 						"type": "basic",
 						"basic": {
-							"password": "userapi@2025",
+							"password": "{{vault:authorization-password}}",
 							"username": "Numpy@gmail.com"
 						}
 					},
@@ -842,7 +842,7 @@
 					"auth": {
 						"type": "basic",
 						"basic": {
-							"password": "userapi@2025",
+							"password": "{{vault:authorization-password}}",
 							"username": "Numpy@gmail.com"
 						}
 					},
@@ -2154,7 +2154,7 @@
 					"auth": {
 						"type": "basic",
 						"basic": {
-							"password": "userapi@2025",
+							"password": "{{vault:authorization-password}}",
 							"username": "Numpy@gmail.com"
 						}
 					},
@@ -2404,7 +2404,7 @@
 			"auth": {
 				"type": "basic",
 				"basic": {
-					"password": "userapi@2025",
+					"password": "{{vault:authorization-password}}",
 					"username": "Numpy@gmail.com"
 				}
 			},
@@ -2437,7 +2437,7 @@
 	"auth": {
 		"type": "basic",
 		"basic": {
-			"password": "userapi@2025",
+			"password": "{{vault:authorization-password}}",
 			"username": "Numpy@gmail.com"
 		}
 	},
@@ -2467,53 +2467,65 @@
 	],
 	"variable": [
 		{
+			"id": "12af2258-ddc1-4999-a896-3cb1f8bd6c02",
 			"key": "baseurl",
 			"value": "https://userserviceapp-f5a54828541b.herokuapp.com",
 			"type": "string"
 		},
 		{
+			"id": "5dbae210-dcc8-4eb5-b954-867bd610e6ca",
 			"key": "getendpointbyname",
 			"value": "uap/users/username",
 			"type": "string"
 		},
 		{
+			"id": "b545aae8-2b00-4428-8caa-d853bf9bce8a",
 			"key": "user",
 			"value": "uap/user",
 			"type": "string"
 		},
 		{
+			"id": "ab831719-8300-4d87-ac49-65108c9a6adf",
 			"key": "getuserendpoint",
 			"value": "uap/users",
 			"type": "string"
 		},
 		{
+			"id": "11b097c0-8928-44c6-bb61-dc3886a7e56d",
 			"key": "userId",
 			"value": "",
 			"type": "string"
 		},
 		{
+			"id": "6238c4f4-09c7-4dad-ae6a-229b34ce956f",
 			"key": "postendpoint",
 			"value": "uap/createusers",
 			"type": "string"
 		},
 		{
+			"id": "10029c80-dcea-4996-875e-da381bd39a09",
 			"key": "updateuser",
 			"value": "uap/updateuser",
 			"type": "string"
 		},
 		{
+			"id": "71a8952c-3263-4a5b-9897-a01030d17657",
+			"key": "71a8952c-3263-4a5b-9897-a01030d17657",
 			"value": ""
 		},
 		{
+			"id": "fe912a6d-01b8-484c-bd60-b47c4dd9a3b3",
 			"key": "userid",
 			"value": ""
 		},
 		{
+			"id": "7a932c4f-3105-4a57-9302-7550ac089d11",
 			"key": "userFirstName",
 			"value": "",
 			"type": "string"
 		},
 		{
+			"id": "f927c8c1-018c-4bac-b793-a716f04d858b",
 			"key": "deleteuser",
 			"value": "deleteuser",
 			"type": "string"
